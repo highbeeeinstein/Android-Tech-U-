@@ -70,7 +70,7 @@ class _View_resultState extends State<View_result> {
                   ),
                   Container(
                     width: 300.0,
-                    height: 1200.0,
+                    height: 1350.0,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +285,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                              color: MaterialStateProperty.all(Colors.white),
                                 cells: [
                                   DataCell(
                                        Text("9", style: TextStyle(fontSize: 20),)
@@ -301,14 +301,29 @@ class _View_resultState extends State<View_result> {
                           SizedBox(
                             height: 10.0,
                           ),
-                          // Container(
-                          //   color: Colors.white,
-                          //   padding: EdgeInsets.all(10),
-                          //   margin: EdgeInsets.fromLTRB(100, 0, 0, 20),
-                          //   child: Text(
-                          //     "Total Units: 21", style: TextStyle(fontSize: 20)
-                          //   ),
-                          // )
+                          Container(
+                             width: 1300.0,
+                             height: 50,
+                            color: Color.fromRGBO(228, 242, 243, 1),
+                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            padding: EdgeInsets.fromLTRB(1010, 10, 0, 0),
+                            child: Text(
+                              "GPA: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          Container(
+                             width: 1300.0,
+                             height: 50,
+                            color: Color.fromRGBO(228, 242, 243, 1),
+                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            padding: EdgeInsets.fromLTRB(1010, 10, 0, 0),
+                            child: Text(
+                              "CGPA: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
+                            ),
+                          ),
                     ],
                   ),
                       
