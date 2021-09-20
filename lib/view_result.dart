@@ -202,6 +202,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("A", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
+
                             DataRow(
                                 color: MaterialStateProperty.all(Colors.white),
                                 cells: [
@@ -255,11 +256,25 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("A", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
+                               DataRow(
+                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                cells: [
+                                  DataCell(
+                                       Text("7", style: TextStyle(fontSize: 20),)
+                                     ),
+                                  DataCell(Text("CSC 312", style: TextStyle(fontSize: 20),)),
+                                  DataCell(
+                                      Text("System Analysis and Design ", style: TextStyle(fontSize: 20),)),
+                                       DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("90", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                ]),  
                             DataRow(
                                 color: MaterialStateProperty.all(Colors.white),
                                 cells: [
                                   DataCell(
-                                       Text("7", style: TextStyle(fontSize: 20),)
+                                       Text("8", style: TextStyle(fontSize: 20),)
                                     ),
                                   DataCell(Text("FRE 310", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Language Acquisition", style: TextStyle(fontSize: 20),)),
@@ -272,7 +287,7 @@ class _View_resultState extends State<View_result> {
                                 // color: MaterialStateProperty.all(Colors.blueAccent),
                                 cells: [
                                   DataCell(
-                                       Text("8", style: TextStyle(fontSize: 20),)
+                                       Text("9", style: TextStyle(fontSize: 20),)
                                      ),
                                   DataCell(Text("EVS 314", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Business Idea", style: TextStyle(fontSize: 20),)),
