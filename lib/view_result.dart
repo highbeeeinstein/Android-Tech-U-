@@ -57,7 +57,7 @@ class _View_resultState extends State<View_result> {
                                 // Text("Close", style: TextStyle(color:Colors.white,fontSize: 19))
                                 TextButton(
                                   onPressed: (){
-
+                                        Navigator.pushNamed(context, '/dash');
                                   }, 
                                   child: Text("Close", style: TextStyle(color:Colors.white,fontSize: 19))
                                   )
@@ -70,7 +70,7 @@ class _View_resultState extends State<View_result> {
                   ),
                   Container(
                     width: 300.0,
-                    height: 1000.0,
+                    height: 1200.0,
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
