@@ -285,7 +285,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("9", style: TextStyle(fontSize: 20),)

@@ -213,7 +213,8 @@ class _DashboardState extends State<Dashboard> {
 
                         // ),
                         
-                          // headingRowColor: MaterialStateProperty.all(Colors.blueGrey),
+                          headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                          
                           // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
                           columns: [
                             DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20),)),
@@ -241,7 +242,7 @@ class _DashboardState extends State<Dashboard> {
                                   DataCell(Text("3", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("2", style: TextStyle(fontSize: 20),)
@@ -267,7 +268,7 @@ class _DashboardState extends State<Dashboard> {
                                   DataCell(Text("2", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("4", style: TextStyle(fontSize: 20),)
@@ -279,11 +280,24 @@ class _DashboardState extends State<Dashboard> {
                                   DataCell(Text("300", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("3", style: TextStyle(fontSize: 20),)),
                                 ]),
+                                  DataRow(
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                cells: [
+                                  DataCell(
+                                       Text("5", style: TextStyle(fontSize: 20),)
+                                      ),
+                                  DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("System Analysis and Design", style: TextStyle(fontSize: 20),)),
+                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                ]),
                             DataRow(
                                 color: MaterialStateProperty.all(Colors.white),
                                 cells: [
                                   DataCell(
-                                       Text("5", style: TextStyle(fontSize: 20),)
+                                       Text("6", style: TextStyle(fontSize: 20),)
                                       ),
                                   DataCell(Text("CSE 311", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Special Topics in Software", style: TextStyle(fontSize: 20),)),
@@ -293,10 +307,10 @@ class _DashboardState extends State<Dashboard> {
                                   DataCell(Text("3", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
-                                       Text("6", style: TextStyle(fontSize: 20),)
+                                       Text("7", style: TextStyle(fontSize: 20),)
                                      ),
                                   DataCell(Text("CSC 333", style: TextStyle(fontSize: 20),)),
                                   DataCell(
@@ -310,7 +324,7 @@ class _DashboardState extends State<Dashboard> {
                                 color: MaterialStateProperty.all(Colors.white),
                                 cells: [
                                   DataCell(
-                                       Text("7", style: TextStyle(fontSize: 20),)
+                                       Text("8", style: TextStyle(fontSize: 20),)
                                     ),
                                   DataCell(Text("FRE 310", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Language Acquisition", style: TextStyle(fontSize: 20),)),
@@ -320,10 +334,10 @@ class _DashboardState extends State<Dashboard> {
                                   DataCell(Text("2", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
-                                       Text("8", style: TextStyle(fontSize: 20),)
+                                       Text("9", style: TextStyle(fontSize: 20),)
                                      ),
                                   DataCell(Text("EVS 314", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Business Idea", style: TextStyle(fontSize: 20),)),
@@ -341,7 +355,7 @@ class _DashboardState extends State<Dashboard> {
                             padding: EdgeInsets.all(10),
                             margin: EdgeInsets.fromLTRB(100, 0, 0, 20),
                             child: Text(
-                              "Total Units: 21", style: TextStyle(fontSize: 20)
+                              "Total Units: 24", style: TextStyle(fontSize: 20)
                             ),
                           )
                     ],
