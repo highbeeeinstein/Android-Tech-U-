@@ -162,7 +162,7 @@ class _View_resultState extends State<View_result> {
 
                         // ),
                         
-                          // headingRowColor: MaterialStateProperty.all(Colors.blueGrey),
+                          headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                           // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
                           columns: [
                             DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20),)),
@@ -190,7 +190,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("2", style: TextStyle(fontSize: 20),)
@@ -217,7 +217,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("4", style: TextStyle(fontSize: 20),)
@@ -243,7 +243,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("6", style: TextStyle(fontSize: 20),)
@@ -257,7 +257,7 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                                DataRow(
-                                // color: MaterialStateProperty.all(Colors.blueAccent),
+                                color: MaterialStateProperty.all(Colors.white),
                                 cells: [
                                   DataCell(
                                        Text("7", style: TextStyle(fontSize: 20),)
@@ -271,7 +271,8 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),  
                             DataRow(
-                                color: MaterialStateProperty.all(Colors.white),
+                              
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                                 cells: [
                                   DataCell(
                                        Text("8", style: TextStyle(fontSize: 20),)
