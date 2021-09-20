@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-class View_result extends StatefulWidget {
-  const View_result({ Key? key }) : super(key: key);
+class View_history extends StatefulWidget {
+  const View_history({ Key? key }) : super(key: key);
 
   @override
-  _View_resultState createState() => _View_resultState();
+  _View_historyState createState() => _View_historyState();
 }
 
-class _View_resultState extends State<View_result> {
+class _View_historyState extends State<View_history> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class _View_resultState extends State<View_result> {
                     children: [
                       Row(
                         children: [
-                          Text("STUDENT \n RESULT \n INFORMATION", style: TextStyle(fontSize: 15),),
+                          Text("STUDENT \n REGISTRATION \n FORM", style: TextStyle(fontSize: 15),),
                           Container(
                             padding: EdgeInsets.all(6),
                             margin:EdgeInsets.all(10),
@@ -99,8 +99,8 @@ class _View_resultState extends State<View_result> {
                             height: 20,
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
-                          child: Text("STUDENT RESULT", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+                          padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                          child: Text("COURSE REGISTRATION FORM", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
                         ),
                         Divider(
                           thickness: 2.0,
@@ -165,13 +165,13 @@ class _View_resultState extends State<View_result> {
                           headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                           // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
                           columns: [
-                            DataColumn(label: Text("S/N", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("COURSE CODE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("COURSE TITLE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                             DataColumn(label: Text("COURSE UNIT", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                              DataColumn(label: Text("SCORE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                               DataColumn(label: Text("GRADE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("COMMENT", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
+                         DataColumn(label: Text("S/N", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,))),
+                          DataColumn(label: Text("COURSE CODE", style: TextStyle(fontSize: 25,fontWeight:FontWeight.bold,),)),
+                            DataColumn(label: Text("COURSE TITLE", style: TextStyle(fontSize: 25,fontWeight:FontWeight.bold,),)),
+                             DataColumn(label: Text("UNIT", style: TextStyle(fontSize: 25,fontWeight:FontWeight.bold,),)),
+                            //   DataColumn(label: Text("SCORE", style: TextStyle(fontSize: 20),)),
+                            //    DataColumn(label: Text("GRADE", style: TextStyle(fontSize: 20),)),
+                            // DataColumn(label: Text("COMMENT", style: TextStyle(fontSize: 20),)),
                             // DataColumn(label: Text("Select")),
                           ],
                           rows: [
@@ -185,9 +185,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("CSC 301", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Structured Programming", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("84", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("84", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
                                   color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
@@ -198,9 +198,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("CSC 303", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Data Manangement", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("80", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("80", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
 
                             DataRow(
@@ -212,9 +212,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("CSC 305", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("operating System", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("78", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("78", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
                                 color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
@@ -225,9 +225,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Algorithm and Complexity Analysis", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("92", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("92", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
                                 color: MaterialStateProperty.all(Colors.white),
@@ -238,9 +238,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("CSE 311", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Special Topics in Software", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("83", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("83", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
                                 color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
@@ -252,9 +252,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(
                                       Text(" Mathematical and Numerical Methods", style: TextStyle(fontSize: 20),)),
                                        DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("82", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("82", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                                DataRow(
                                 color: MaterialStateProperty.all(Colors.white),
@@ -266,9 +266,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(
                                       Text("System Analysis and Design ", style: TextStyle(fontSize: 20),)),
                                        DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("90", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("90", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),  
                             DataRow(
                               
@@ -280,9 +280,9 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("FRE 310", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Language Acquisition", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("0", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("72", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("A", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("72", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("A", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ]),
                             DataRow(
                               color: MaterialStateProperty.all(Colors.white),
@@ -293,37 +293,44 @@ class _View_resultState extends State<View_result> {
                                   DataCell(Text("EVS 314", style: TextStyle(fontSize: 20),)),
                                   DataCell(Text("Business Idea", style: TextStyle(fontSize: 20),)),
                                    DataCell(Text("0", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("50", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("C", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("50", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("C", style: TextStyle(fontSize: 20),)),
+                                  // DataCell(Text("Pass", style: TextStyle(fontSize: 20),)),
                                 ])
                           ]),
                           SizedBox(
                             height: 10.0,
                           ),
                           Container(
-                             width: 1300.0,
-                             height: 50,
+                             width: 600.0,
+                             height: 90,
                             color: Color.fromRGBO(228, 242, 243, 1),
                             margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                            padding: EdgeInsets.fromLTRB(1010, 10, 0, 0),
-                            child: Text(
-                              "GPA: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
+                            padding: EdgeInsets.fromLTRB(400, 10, 0, 0),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "TOTAL \n UNITS: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
+                                ),
+                                Container(
+                                  padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                                  child: Text("17", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)))
+                              ],
                             ),
                           ),
                           SizedBox(
                             height: 10.0,
                           ),
-                          Container(
-                             width: 1300.0,
-                             height: 50,
-                            color: Color.fromRGBO(228, 242, 243, 1),
-                            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                            padding: EdgeInsets.fromLTRB(1010, 10, 0, 0),
-                            child: Text(
-                              "CGPA: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
-                            ),
-                          ),
+                          // Container(
+                          //    width: 500.0,
+                          //    height: 50,
+                          //   color: Color.fromRGBO(228, 242, 243, 1),
+                          //   margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          //   padding: EdgeInsets.fromLTRB(200, 10, 0, 0),
+                          //   child: Text(
+                          //     "CGPA: ", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)
+                          //   ),
+                          // ),
                     ],
                   ),
                       

@@ -49,7 +49,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 900.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,7 +91,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 900.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,7 +139,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 900.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -217,13 +217,13 @@ class _DashboardState extends State<Dashboard> {
                           
                           // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
                           columns: [
-                            DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20),)),
-                            DataColumn(label: Text("Course Code", style: TextStyle(fontSize: 20),)),
-                            DataColumn(label: Text("Course Name", style: TextStyle(fontSize: 20),)),
-                             DataColumn(label: Text("Session", style: TextStyle(fontSize: 20),)),
-                              DataColumn(label: Text("Semester", style: TextStyle(fontSize: 20),)),
-                               DataColumn(label: Text("Level", style: TextStyle(fontSize: 20),)),
-                            DataColumn(label: Text("Unit", style: TextStyle(fontSize: 20),)),
+                            DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                            DataColumn(label: Text("Course Code", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                            DataColumn(label: Text("Course Name", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                             DataColumn(label: Text("Session", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("Semester", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                               DataColumn(label: Text("Level", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                            DataColumn(label: Text("Unit", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
                             // DataColumn(label: Text("Select")),
                           ],
                           rows: [

@@ -177,7 +177,7 @@ class _Course_historyState extends State<Course_history> {
                       ),
                       child: TextButton(
                         onPressed: (){
-                          Navigator.pushNamed(context, '/view');
+                          Navigator.pushNamed(context, '/hist');
                         }, 
                         child: Text("View Registered Course", style: TextStyle(color: Colors.white, fontSize: 17),)
                         ),

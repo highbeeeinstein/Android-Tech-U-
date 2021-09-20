@@ -16,6 +16,7 @@ import 'package:flutter_application_1/signup.dart';
 // import 'package:flutter_application_1/expand.dart';
 import 'package:flutter_application_1/slider.dart';
 import 'package:flutter_application_1/update.dart';
+import 'package:flutter_application_1/view_history.dart';
 import 'package:flutter_application_1/view_result.dart';
 
 void main() {
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           '/email':(context) => Student_mail(),
           '/update':(context) => Update_profile(),
             '/view':(context) => View_result(),
+             '/hist':(context) => View_history(),
         },
       // theme: ThemeData(
       //   primarySwatch: Colors.red,
