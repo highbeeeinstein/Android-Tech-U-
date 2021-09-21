@@ -143,7 +143,7 @@ class _LoginState extends State<Login> {
                                 child: TextButton(
                                     onPressed: () {
                                       //Navigator.pushNamed(context, '/forget');
-                                      final c1 = Crypt.sha256('einstein');
+                                      final c1 = Crypt.sha256('amubieya');
                                       print(c1);
                                     },
                                     child: Text(
