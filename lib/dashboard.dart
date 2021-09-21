@@ -489,15 +489,57 @@ Widget myDrawer(BuildContext context) {
               title: Text("E-libarary"),
               leading: Icon(FontAwesomeIcons.briefcase),
               onTap: () {
-              Navigator.pushNamed(context, '/');
-              
+              // Navigator.pushNamed(context, '/');
+
           },
             ),
             ListTile(
               title: Text("E-Learning"),
               leading: Icon(FontAwesomeIcons.briefcase),
               onTap: () {
-              Navigator.pushNamed(context, '/');
+              // Navigator.pushNamed(context, '/');
+          },
+            )
+          ],
+          
+          ),
+          ExpansionTile(
+          title: Text("Downloads"),
+          leading: Icon(FontAwesomeIcons.dropbox),
+          children: [
+            
+            ListTile(
+              title: Text("Lecture TimeTable"),
+              leading: Icon(FontAwesomeIcons.table),
+              onTap: () {
+              // Navigator.pushNamed(context, '/');
+              launch("https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf");
+          },
+            ),
+            ListTile(
+              title: Text("E-Exam Guide"),
+              leading: Icon(FontAwesomeIcons.table),
+              onTap: () {
+              // Navigator.pushNamed(context, '/');
+              launch("https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf");
+          },
+            ),
+            ListTile(
+              title: Text("Academic Calendar"),
+              leading: Icon(FontAwesomeIcons.table),
+              onTap: () {
+                 launch("https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf");
+              // Navigator.pushNamed(context, '/');
+              
+          },
+            ),
+            ListTile(
+              title: Text("Fee Structure"),
+              leading: Icon(FontAwesomeIcons.table),
+              onTap: () {
+              // Navigator.pushNamed(context, '/');
+              launch(" https://www.tech-u.edu.ng/documents/school-fees-structure.pdf");
+             
           },
             )
           ],

@@ -77,7 +77,7 @@ class _Image_sliderState extends State<Image_slider> {
             borderRadius: BorderRadius.circular(50.0),
             color: Colors.red,
           ),
-          width: 100,
+          // width: 100,
           height: 50,
           child: TextButton(
             onPressed: (){
