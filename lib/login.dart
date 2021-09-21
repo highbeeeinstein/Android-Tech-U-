@@ -143,10 +143,10 @@ class _LoginState extends State<Login> {
                                       color: Colors.red,
                                       child: TextButton(
                                         onPressed: (){
-                                         if (_formKey.currentState!.validate()) {
-                                          Navigator.pushNamed(context, '/dash');
-                                         }
-                                          // Navigator.pushNamed(context, '/dash');
+                                        //  if (_formKey.currentState!.validate()) {
+                                        //   Navigator.pushNamed(context, '/dash');
+                                        //  }
+                                           Navigator.pushNamed(context, '/dash');
                                         }, 
                                         child: Text(
                                           "Log In", style: TextStyle(color: Colors.white, fontSize: 30),

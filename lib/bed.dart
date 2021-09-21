@@ -51,7 +51,7 @@ class _BedspaceState extends State<Bedspace> {
                 ),
                 Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,7 +93,7 @@ class _BedspaceState extends State<Bedspace> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -141,7 +141,7 @@ class _BedspaceState extends State<Bedspace> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,12 +185,12 @@ class _BedspaceState extends State<Bedspace> {
                 ),
                 Container(
                   height: 270.0,
-                  width: 400.0,
+                  width: 1400.0,
                   margin: EdgeInsets.all(5),
                   // padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
                   color: Colors.white,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           padding: EdgeInsets.fromLTRB(30, 60, 30, 10),

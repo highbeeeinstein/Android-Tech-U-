@@ -46,16 +46,19 @@ class _Course_registrationState extends State<Course_registration> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: Text("Course Registration",
-                      // textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 20.0,
-                      )),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+                    child: Text("Course Registration",
+                        // textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 20.0,
+                        )),
+                  ),
                 ),
                 Container(
+                  width: 1400.0,
                   child: DataTableDemo(),
                 ),
 
@@ -278,12 +281,14 @@ class _Course_registrationState extends State<Course_registration> {
   static List<User> getUsers() {
     return <User>[
       User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-      User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-      User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-       User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-       User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-       User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
-      User(courseCode: "CSC 301", courseName: "Structured Programming", unitNo: "3",),
+      User(courseCode: "CSC 305", courseName: "Operating System", unitNo: "2",),
+      User(courseCode: "CSC 310", courseName: "Algorithm and Complexity", unitNo: "2",),
+       User(courseCode: "CSC 333", courseName: "Mathematical and Numerical Analysis", unitNo: "3",),
+       User(courseCode: "CSC 315", courseName: "System Analysis and Design", unitNo: "3",),
+       User(courseCode: "CSC 320", courseName: "Data Management", unitNo: "3",),
+      User(courseCode: "CSE 311", courseName: "Special Topics in Software", unitNo: "3",),
+       User(courseCode: "EVS 310", courseName: "Entrepreneurship", unitNo: "0",),
+      User(courseCode: "FRE 301", courseName: "language Acquisition", unitNo: "0",),
     ];
   }
 }
@@ -333,66 +338,71 @@ class _DataTableDemoState extends State<DataTableDemo> {
   SingleChildScrollView dataBody() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: DataTable(
-        dataRowHeight: 50.0,
-        columnSpacing: 30.0,
-        sortAscending: sort,
-        sortColumnIndex: 0,
-        columns: [
-          DataColumn(
-              label: Text("COURSE CODE"),
+      child: Container(
+        width: 600,
+        margin: EdgeInsets.all(20),
+        child: DataTable(
+          dataRowHeight: 50.0,
+          columnSpacing: 30.0,
+          sortAscending: sort,
+          sortColumnIndex: 0,
+          columns: [
+            DataColumn(
+                label: Text("COURSE CODE"),
+                numeric: false,
+                // tooltip: "This is First Name",
+                // onSort: (columnIndex, ascending) {
+                //   setState(() {
+                //     sort = !sort;
+                //   });
+                //   onSortColum(columnIndex, ascending);
+                // }
+                ),
+            DataColumn(
+              label: Text("COURSE NAME"),
               numeric: false,
-              // tooltip: "This is First Name",
-              // onSort: (columnIndex, ascending) {
-              //   setState(() {
-              //     sort = !sort;
-              //   });
-              //   onSortColum(columnIndex, ascending);
-              // }
-              ),
-          DataColumn(
-            label: Text("COURSE NAME"),
-            numeric: false,
-            // tooltip: "This is Last Name",
-          ),
-           DataColumn(
-            label: Text("UNIT"),
-            numeric: false,
-            // tooltip: "This is Last Name2",
-          ),
-          //  DataColumn(
-          //   label: Text("LAST NAME3"),
-          //   numeric: false,
-          //   tooltip: "This is Last Name3",
-          // ),
-        ],
-        rows: users
-            .map(
-              (user) => DataRow(
-              selected: selectedUsers.contains(user),
-              onSelectChanged: (b) {
-                print("Onselect");
-                onSelectedRow(b!, user);
-              },
-              cells: [
-                DataCell(
-                  Text(user.courseCode),
-                  onTap: () {
-                    // print('Selected ${user.firstName}');
-                  },
-                ),
-                DataCell(
-                  Text(user.courseName),
-                ),
-                DataCell(
-                  Text(user.unitNo),
-                ),
-                // DataCell(
-                //   Text(user.thirdname),
-                // ),
-              ]),
-        )
-            .toList(),
+              // tooltip: "This is Last Name",
+            ),
+             DataColumn(
+              label: Text("UNIT"),
+              numeric: false,
+              // tooltip: "This is Last Name2",
+            ),
+            //  DataColumn(
+            //   label: Text("LAST NAME3"),
+            //   numeric: false,
+            //   tooltip: "This is Last Name3",
+            // ),
+          ],
+          rows: users
+              .map(
+                (user) => DataRow(
+                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                selected: selectedUsers.contains(user),
+                onSelectChanged: (b) {
+                  print("Onselect");
+                  onSelectedRow(b!, user);
+                },
+                cells: [
+                  DataCell(
+                    Text(user.courseCode),
+                    onTap: () {
+                      // print('Selected ${user.firstName}');
+                    },
+                  ),
+                  DataCell(
+                    Text(user.courseName),
+                  ),
+                  DataCell(
+                    Text(user.unitNo),
+                  ),
+                  // DataCell(
+                  //   Text(user.thirdname),
+                  // ),
+                ]),
+          )
+              .toList(),
+        ),
       ),
     );
   }
@@ -405,76 +415,78 @@ class _DataTableDemoState extends State<DataTableDemo> {
               ),
              Container(
                   margin: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                    width: 400,
+                    width: 500,
                     height: 300,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.red, width: 3.0),
                       color: Colors.yellow
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.fromLTRB(50, 20, 0, 20),
-                          child: Text("Preview Selected Courses", style: TextStyle(fontSize: 20),),
-                        ),
-                        Container(
-                          padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("You Have Selected ${selectedUsers.length} Courses", style: TextStyle(color: Colors.green,
-                          fontSize: 20
-                          ),),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(20, 10, 20, 40),
-                          child: Table(
-                             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                        defaultColumnWidth: FixedColumnWidth(140.0),  
-                          border: TableBorder.all(  
-                              color: Colors.black,  
-                              style: BorderStyle.solid,  
-                              width: 1),  
-                            children: [
-                              TableRow(
-                                children: [
-                                  Column(
-                                children:[
-                                Container(
-                                  padding: EdgeInsets.fromLTRB(0, 7, 0, 7),
-                                  child: Text('Course', style: TextStyle(fontSize: 20.0, )))
-                                ]),  
-                              Column(children:[Text('Unit', style: TextStyle(fontSize: 20.0))]),  
-                              // Column(children:[Text('Course Name', style: TextStyle(fontSize: 20.0))]),
-                              // Column(children:[Text('Units', style: TextStyle(fontSize: 20.0))]),    
-                                ]
-                              )
-                            ],
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.fromLTRB(60, 0, 0, 10),
-                          
-                          child: Text("TOTAL UNIT:: ", style: TextStyle(fontSize: 25),),
-                        ),
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Container(
-                              width: 200.0,
-                              height: 40.0,
-                              margin: EdgeInsets.fromLTRB(60, 0, 0, 0),
-                              child: ElevatedButton(
-                                  style: ButtonStyle(
-                        
-                                    backgroundColor:
-                            MaterialStateProperty.all(Colors.red),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Register Courses",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
+                            padding: EdgeInsets.fromLTRB(50, 20, 0, 20),
+                            child: Text("Preview Selected Courses", style: TextStyle(fontSize: 20),),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
+                            child: Text("You Have Selected ${selectedUsers.length} Courses", style: TextStyle(color: Colors.green,
+                            fontSize: 20
+                            ),),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(20, 10, 20, 40),
+                            child: Table(
+                               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                          defaultColumnWidth: FixedColumnWidth(140.0),  
+                            border: TableBorder.all(  
+                                color: Colors.black,  
+                                style: BorderStyle.solid,  
+                                width: 1),  
+                              children: [
+                                TableRow(
+                                  children: [
+                                    Column(
+                                  children:[
+                                  Container(
+                                    padding: EdgeInsets.fromLTRB(0, 7, 0, 7),
+                                    child: Text('Course', style: TextStyle(fontSize: 20.0, )))
+                                  ]),  
+                                Column(children:[Text('Unit', style: TextStyle(fontSize: 20.0))]),  
+                                // Column(children:[Text('Course Name', style: TextStyle(fontSize: 20.0))]),
+                                // Column(children:[Text('Units', style: TextStyle(fontSize: 20.0))]),    
+                                  ]
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(60, 0, 0, 10),
+                            
+                            child: Text("TOTAL UNIT:: ", style: TextStyle(fontSize: 25),),
+                          ),
+                            Container(
+                                width: 200.0,
+                                height: 40.0,
+                                margin: EdgeInsets.fromLTRB(60, 0, 0, 0),
+                                child: ElevatedButton(
+                                    style: ButtonStyle(
+                          
+                                      backgroundColor:
+                              MaterialStateProperty.all(Colors.red),
                         ),
-                      )),
+                        onPressed: () {},
+                        child: Text(
+                          "Register Courses",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                          ),
+                        )),
                 )
-                      ],
+                        ],
+                      ),
                     ),
 
                 ),

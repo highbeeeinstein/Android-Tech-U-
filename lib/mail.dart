@@ -66,7 +66,7 @@ class _Student_mailState extends State<Student_mail> {
                 ),
                 Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,7 +108,7 @@ class _Student_mailState extends State<Student_mail> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,7 +156,7 @@ class _Student_mailState extends State<Student_mail> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,12 +200,12 @@ class _Student_mailState extends State<Student_mail> {
                 ),
                  Container(
                   height: 300.0,
-                  width: 500.0,
+                  width: 1400.0,
                   margin: EdgeInsets.all(5),
                   // padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
                   color: Colors.white,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           padding: EdgeInsets.fromLTRB(100, 20, 10, 10),
@@ -220,6 +220,7 @@ class _Student_mailState extends State<Student_mail> {
                         Container(
                           padding: EdgeInsets.fromLTRB(30, 10, 10, 10),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(FontAwesomeIcons.envelope,),
                               Text("ibraheem.wahab@tech-u.edu.ng",
@@ -230,6 +231,7 @@ class _Student_mailState extends State<Student_mail> {
                          Container(
                           padding: EdgeInsets.fromLTRB(60, 10, 15, 10),
                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(FontAwesomeIcons.key,),
                               Text("Password:tech-u123",

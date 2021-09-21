@@ -12,7 +12,7 @@ class _Assesment_forgetState extends State<Assesment_forget> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
@@ -40,36 +40,39 @@ class _Assesment_forgetState extends State<Assesment_forget> {
               child: Form(
                 key: _formKey,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TextFormField(
-                      decoration: const InputDecoration(
-                           border: OutlineInputBorder(),
-                              focusedBorder: OutlineInputBorder(
-                                         
-                                borderSide: BorderSide(color: Colors.blue, width: 3.0,),
-                                        //  borderRadius: BorderRadius.all(Radius.circular(0)),
-                                       ),
-                                      //  enabledBorder: OutlineInputBorder(
-                                      //    borderSide: BorderSide(color: Colors.blueGrey,  width: 1.0,),
-                                      //   //  borderRadius: BorderRadius.all(Radius.circular(50)),
-                                      //  ),
-                                      hoverColor: Colors.amber,
-                                      //  prefixIcon: const Icon(Icons.person),
-                                      // hintText: 'Enter your Matric Number',
-                                      // labelText: 'Login ID',
-                                      // labelStyle: TextStyle(
-                                      //   color: Colors.blue,
-                                      //   fontSize: 20,
-                                      // ),
-                                    ),
-                                    validator: (value){
-                                      if (value!.isEmpty){
-                                         return 'Please enter your Login ID';
-                                      }
-                                      return null;
+                    Container(
+                      width: 350.0,
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                             border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                           
+                                  borderSide: BorderSide(color: Colors.blue, width: 3.0,),
+                                          //  borderRadius: BorderRadius.all(Radius.circular(0)),
+                                         ),
+                                        //  enabledBorder: OutlineInputBorder(
+                                        //    borderSide: BorderSide(color: Colors.blueGrey,  width: 1.0,),
+                                        //   //  borderRadius: BorderRadius.all(Radius.circular(50)),
+                                        //  ),
+                                        hoverColor: Colors.amber,
+                                        //  prefixIcon: const Icon(Icons.person),
+                                        // hintText: 'Enter your Matric Number',
+                                        // labelText: 'Login ID',
+                                        // labelStyle: TextStyle(
+                                        //   color: Colors.blue,
+                                        //   fontSize: 20,
+                                        // ),
+                                      ),
+                                      validator: (value){
+                                        if (value!.isEmpty){
+                                           return 'Please enter your Login ID';
+                                        }
+                                        return null;
       
-                                    },
+                                      },
+                      ),
                     )
                   ],
                 )

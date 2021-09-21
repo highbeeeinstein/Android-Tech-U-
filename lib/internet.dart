@@ -51,7 +51,7 @@ class _Internet_accessState extends State<Internet_access> {
                 ),
                 Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,7 +93,7 @@ class _Internet_accessState extends State<Internet_access> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -141,7 +141,7 @@ class _Internet_accessState extends State<Internet_access> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 400.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -185,12 +185,12 @@ class _Internet_accessState extends State<Internet_access> {
                 ),
                 Container(
                   height: 220.0,
-                  width: 400.0,
+                  width: 1400.0,
                   margin: EdgeInsets.all(5),
                   // padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
                   color: Colors.white,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           padding: EdgeInsets.fromLTRB(40, 60, 30, 10),
@@ -205,6 +205,7 @@ class _Internet_accessState extends State<Internet_access> {
                         Container(
                           padding: EdgeInsets.fromLTRB(40, 10, 15, 10),
                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.wifi,),
                               Text("Username:125/18/1/0043",
@@ -215,6 +216,7 @@ class _Internet_accessState extends State<Internet_access> {
                          Container(
                           padding: EdgeInsets.fromLTRB(60, 10, 15, 10),
                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(Icons.wifi,),
                               Text("Password:IfmP29",

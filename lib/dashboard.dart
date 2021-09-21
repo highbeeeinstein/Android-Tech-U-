@@ -50,7 +50,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 Container(
                   color: Colors.white,
-                  width: 900.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -92,7 +92,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 900.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,7 +140,7 @@ class _DashboardState extends State<Dashboard> {
                 ),
                  Container(
                   color: Colors.white,
-                  width: 900.0,
+                  width: 1400.0,
                   height: 100.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,145 +209,148 @@ class _DashboardState extends State<Dashboard> {
                   scrollDirection: Axis.horizontal,
                   child: Column(
                     children: [
-                      DataTable(
-                        // decoration: BoxDecoration(
+                      Container(
+                        width: 1400,
+                        child: DataTable(
+                          // decoration: BoxDecoration(
 
-                        // ),
-                        
-                          headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                          // ),
                           
-                          // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
-                          columns: [
-                            DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("Course Code", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("Course Name", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                             DataColumn(label: Text("Session", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                              DataColumn(label: Text("Semester", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                               DataColumn(label: Text("Level", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                            DataColumn(label: Text("Unit", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
-                            // DataColumn(label: Text("Select")),
-                          ],
-                          rows: [
-                            DataRow(
-                                color: MaterialStateProperty.all(Colors.white),
-                                cells: [
-                                  DataCell(
-                                       Text("1", style: TextStyle(fontSize: 20),)
-                                      
-                                          ),
-                                  DataCell(Text("CSC 301", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Structured Programming", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
-                                cells: [
-                                  DataCell(
-                                       Text("2", style: TextStyle(fontSize: 20),)
-                                     ),
-                                  DataCell(Text("CSC 303", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Data Manangement", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Colors.white),
-                                cells: [
-                                  DataCell(
-                                       Text("3", style: TextStyle(fontSize: 20),)
+                            headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                            
+                            // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
+                            columns: [
+                              DataColumn(label: Text("S/N", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("Course Code", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("Course Name", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                               DataColumn(label: Text("Session", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                                DataColumn(label: Text("Semester", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                                 DataColumn(label: Text("Level", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("Unit", style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold,),)),
+                              // DataColumn(label: Text("Select")),
+                            ],
+                            rows: [
+                              DataRow(
+                                  color: MaterialStateProperty.all(Colors.white),
+                                  cells: [
+                                    DataCell(
+                                         Text("1", style: TextStyle(fontSize: 20),)
+                                        
+                                            ),
+                                    DataCell(Text("CSC 301", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Structured Programming", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                  cells: [
+                                    DataCell(
+                                         Text("2", style: TextStyle(fontSize: 20),)
+                                       ),
+                                    DataCell(Text("CSC 303", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Data Manangement", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Colors.white),
+                                  cells: [
+                                    DataCell(
+                                         Text("3", style: TextStyle(fontSize: 20),)
+                                        ),
+                                    DataCell(Text("CSC 305", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("operating System", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                  cells: [
+                                    DataCell(
+                                         Text("4", style: TextStyle(fontSize: 20),)
+                                        ),
+                                    DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Algorithm and Complexity Analysis", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                                    DataRow(
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                  cells: [
+                                    DataCell(
+                                         Text("5", style: TextStyle(fontSize: 20),)
+                                        ),
+                                    DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("System Analysis and Design", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Colors.white),
+                                  cells: [
+                                    DataCell(
+                                         Text("6", style: TextStyle(fontSize: 20),)
+                                        ),
+                                    DataCell(Text("CSE 311", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Special Topics in Software", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                  cells: [
+                                    DataCell(
+                                         Text("7", style: TextStyle(fontSize: 20),)
+                                       ),
+                                    DataCell(Text("CSC 333", style: TextStyle(fontSize: 20),)),
+                                    DataCell(
+                                        Text(" Mathematical and Numerical Methods", style: TextStyle(fontSize: 20),)),
+                                         DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("3", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Colors.white),
+                                  cells: [
+                                    DataCell(
+                                         Text("8", style: TextStyle(fontSize: 20),)
                                       ),
-                                  DataCell(Text("CSC 305", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("operating System", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
-                                cells: [
-                                  DataCell(
-                                       Text("4", style: TextStyle(fontSize: 20),)
-                                      ),
-                                  DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Algorithm and Complexity Analysis", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                                  DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
-                                cells: [
-                                  DataCell(
-                                       Text("5", style: TextStyle(fontSize: 20),)
-                                      ),
-                                  DataCell(Text("CSC 310", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("System Analysis and Design", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Colors.white),
-                                cells: [
-                                  DataCell(
-                                       Text("6", style: TextStyle(fontSize: 20),)
-                                      ),
-                                  DataCell(Text("CSE 311", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Special Topics in Software", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
-                                cells: [
-                                  DataCell(
-                                       Text("7", style: TextStyle(fontSize: 20),)
-                                     ),
-                                  DataCell(Text("CSC 333", style: TextStyle(fontSize: 20),)),
-                                  DataCell(
-                                      Text(" Mathematical and Numerical Methods", style: TextStyle(fontSize: 20),)),
-                                       DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("3", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Colors.white),
-                                cells: [
-                                  DataCell(
-                                       Text("8", style: TextStyle(fontSize: 20),)
-                                    ),
-                                  DataCell(Text("FRE 310", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Language Acquisition", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
-                                cells: [
-                                  DataCell(
-                                       Text("9", style: TextStyle(fontSize: 20),)
-                                     ),
-                                  DataCell(Text("EVS 314", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Business Idea", style: TextStyle(fontSize: 20),)),
-                                   DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("300", style: TextStyle(fontSize: 20),)),
-                                  DataCell(Text("2", style: TextStyle(fontSize: 20),)),
-                                ])
-                          ]),
+                                    DataCell(Text("FRE 310", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Language Acquisition", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
+                                  ]),
+                              DataRow(
+                                  color: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
+                                  cells: [
+                                    DataCell(
+                                         Text("9", style: TextStyle(fontSize: 20),)
+                                       ),
+                                    DataCell(Text("EVS 314", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Business Idea", style: TextStyle(fontSize: 20),)),
+                                     DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("300", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("2", style: TextStyle(fontSize: 20),)),
+                                  ])
+                            ]),
+                      ),
                           SizedBox(
                             height: 10.0,
                           ),
@@ -400,6 +403,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Student profile"),
           leading: Icon(Icons.account_circle),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/profile');
           },
@@ -410,6 +414,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Course Registration"),
           leading: Icon(FontAwesomeIcons.book),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/register');
           },
@@ -417,6 +422,7 @@ Widget myDrawer(BuildContext context) {
          ListTile(
               title: Text("My Email Address"),
               leading: Icon(FontAwesomeIcons.envelope),
+               hoverColor: Colors.red,
               onTap: () {
               Navigator.pushNamed(context, '/email');
           },
@@ -424,6 +430,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
               title: Text("Course History"),
               leading: Icon(FontAwesomeIcons.book),
+               hoverColor: Colors.red,
               onTap: () {
               Navigator.pushNamed(context, '/history');
           },
@@ -432,6 +439,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Lecturer Assessment"),
           leading: Icon(Icons.lock_clock_rounded),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/assess');
           },
@@ -439,6 +447,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Bed Space"),
           leading: Icon(FontAwesomeIcons.bed),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/bed');
           },
@@ -446,6 +455,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Internet Access"),
           leading: Icon(Icons.wifi),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/internet');
           },
@@ -460,6 +470,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Result"),
           leading: Icon(FontAwesomeIcons.chartBar),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/result');
           },
@@ -472,6 +483,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("Courseware"),
               leading: Icon(FontAwesomeIcons.book),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
               launch("https://courseware.tech-u.edu.ng/");
@@ -480,6 +492,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("E-Exam"),
               leading: Icon(FontAwesomeIcons.edit),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
               launch("https://tees.tech-u.edu.ng/#/auth/login");
@@ -488,6 +501,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("E-libarary"),
               leading: Icon(FontAwesomeIcons.briefcase),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
 
@@ -496,6 +510,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("E-Learning"),
               leading: Icon(FontAwesomeIcons.briefcase),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
           },
@@ -505,12 +520,14 @@ Widget myDrawer(BuildContext context) {
           ),
           ExpansionTile(
           title: Text("Downloads"),
+          
           leading: Icon(FontAwesomeIcons.dropbox),
           children: [
             
             ListTile(
               title: Text("Lecture TimeTable"),
               leading: Icon(FontAwesomeIcons.table),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
               launch("https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf");
@@ -519,6 +536,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("E-Exam Guide"),
               leading: Icon(FontAwesomeIcons.table),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
               launch("https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf");
@@ -527,6 +545,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("Academic Calendar"),
               leading: Icon(FontAwesomeIcons.table),
+               hoverColor: Colors.red,
               onTap: () {
                  launch("https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf");
               // Navigator.pushNamed(context, '/');
@@ -536,6 +555,7 @@ Widget myDrawer(BuildContext context) {
             ListTile(
               title: Text("Fee Structure"),
               leading: Icon(FontAwesomeIcons.table),
+               hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
               launch(" https://www.tech-u.edu.ng/documents/school-fees-structure.pdf");
@@ -549,6 +569,7 @@ Widget myDrawer(BuildContext context) {
         ListTile(
           title: Text("Log Out"),
           leading: Icon(FontAwesomeIcons.signOutAlt),
+           hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/login');
           },

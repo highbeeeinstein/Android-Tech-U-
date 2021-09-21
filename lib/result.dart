@@ -48,7 +48,7 @@ class _Check_resultState extends State<Check_result> {
               child: Container(
                 margin: EdgeInsets.all(10.0),
                 padding: EdgeInsets.all(10.0),
-                // width: 400.0,
+                width: 1400.0,
                 height: 370.0,
                 color: Colors.white,
                 child: Column(
@@ -69,7 +69,7 @@ class _Check_resultState extends State<Check_result> {
                     ),
                     Container(
                     
-                      width: 370.0,
+                      width: 1300.0,
                       child: DropdownButton<String>(
                         iconEnabledColor: Colors.black,
                         isExpanded: true,
@@ -122,7 +122,7 @@ class _Check_resultState extends State<Check_result> {
                     ),
                     Container(
                     
-                      width: 370.0,
+                      width: 1300.0,
                       child: DropdownButton<String>(
                         iconEnabledColor: Colors.black,
                         isExpanded: true,
@@ -167,21 +167,23 @@ class _Check_resultState extends State<Check_result> {
                     SizedBox(
                       height: 40,
                     ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(100, 0, 0, 0),
-                      width: 100.0,
-                      height: 50.0,
-                     
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(3),
-                         color: Colors.red,
-                      ),
-                      child: TextButton(
-                        onPressed: (){
-                          Navigator.pushNamed(context, '/view');
-                        }, 
-                        child: Text("View Result", style: TextStyle(color: Colors.white, fontSize: 17),)
+                    Center(
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB(100, 0, 0, 0),
+                        width: 200.0,
+                        height: 50.0,
+                       
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                           color: Colors.red,
                         ),
+                        child: TextButton(
+                          onPressed: (){
+                            Navigator.pushNamed(context, '/view');
+                          }, 
+                          child: Text("View Result", style: TextStyle(color: Colors.white, fontSize: 17),)
+                          ),
+                      ),
                     )  
                      ],
                 ),
