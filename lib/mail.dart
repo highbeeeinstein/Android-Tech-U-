@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'dashboard.dart';
 class Student_mail extends StatefulWidget {
@@ -10,6 +12,19 @@ class Student_mail extends StatefulWidget {
 }
 
 class _Student_mailState extends State<Student_mail> {
+  //  String email="https://mail.google.com/mail/u/0/#inbox";
+  // void _launchEmail() async {
+  //   final Uri params = Uri(
+  //     scheme: 'mailto',
+  //     path: 'https://webmail.au.syrahost.com/',
+  //   );
+  //   String  url = params.toString();
+  //    if (await canLaunch(url)) {
+  //     await launch(url);
+  //   } else {
+  //     print( 'Could not launch $url');
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -230,7 +245,15 @@ class _Student_mailState extends State<Student_mail> {
                            Container(
                              padding: EdgeInsets.fromLTRB(20, 10, 5, 10),
                             child: TextButton(
-                              onPressed: (){}, 
+                              onPressed: (){ 
+                                 //  if (_formKey.currentState!.validate()) {
+                                      //   Navigator.pushNamed(context, '/dash');
+                                      //  }
+
+                           launch('https://mail.google.com/mail/u/0/#inbox');
+                      
+
+                              },
                               child: Text("Go to Student Mail", 
                               style: TextStyle(color: Colors.blue, fontSize: 35),)
                               )

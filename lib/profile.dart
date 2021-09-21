@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dashboard.dart';
 class Student_profile extends StatefulWidget {
@@ -11,6 +12,8 @@ class Student_profile extends StatefulWidget {
 }
 
 class _Student_profileState extends State<Student_profile> {
+   static late SharedPreferences _preferences;
+   static const _KeyUser ='user';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,7 +178,12 @@ class _Student_profileState extends State<Student_profile> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Date of Birth:", style: TextStyle(fontSize: 20),),
-                              Text("", style: TextStyle(color: Colors.red, fontSize: 20),),
+                              // TextField("", style: TextStyle(color: Colors.red, fontSize: 20),),
+                              TextField(
+                                onChanged: (date_of_birth){
+
+                                },
+                              )
                              
                             ],
                           ),
@@ -712,5 +720,11 @@ class _Student_profileState extends State<Student_profile> {
         )
       ), 
     );
+    
   }
 }
+//   static Future init() async =>
+//       _preferences= await SharedPreferences.getInstance();
+
+//   static Future setUser() async =>
+// }

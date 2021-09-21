@@ -139,6 +139,7 @@ SizedBox(
                                       //    borderSide: BorderSide( color: Colors.red,  width: 3.0,),
                                       // ), 
                                       labelText: "Address of Residence" , 
+                                      hintMaxLines: 5,
                                     ),
 
                                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
 
@@ -472,14 +473,16 @@ Widget myDrawer(BuildContext context) {
               title: Text("Courseware"),
               leading: Icon(FontAwesomeIcons.book),
               onTap: () {
-              Navigator.pushNamed(context, '/');
+              // Navigator.pushNamed(context, '/');
+              launch("https://courseware.tech-u.edu.ng/");
           },
             ),
             ListTile(
               title: Text("E-Exam"),
               leading: Icon(FontAwesomeIcons.edit),
               onTap: () {
-              Navigator.pushNamed(context, '/');
+              // Navigator.pushNamed(context, '/');
+              launch("https://tees.tech-u.edu.ng/#/auth/login");
           },
             ),
             ListTile(
@@ -487,6 +490,7 @@ Widget myDrawer(BuildContext context) {
               leading: Icon(FontAwesomeIcons.briefcase),
               onTap: () {
               Navigator.pushNamed(context, '/');
+              
           },
             ),
             ListTile(

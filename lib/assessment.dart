@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 class Lecturer_assessment extends StatefulWidget {
   const Lecturer_assessment({ Key? key }) : super(key: key);
 
@@ -140,7 +141,11 @@ class _Lecturer_assessmentState extends State<Lecturer_assessment> {
                         backgroundColor:
                             MaterialStateProperty.all(Colors.blue),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                           if (_formKey.currentState!.validate()) {
+                                           launch("https://assessment.tech-u.edu.ng/");
+                           }
+                      },
                       child: Text(
                         "Sign In",
                         style: TextStyle(
