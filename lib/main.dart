@@ -44,8 +44,11 @@ class _AppState extends State<App> {
       setState(() {
         _initialized = true;
       });
+<<<<<<< HEAD
 
     } catch(e) {
+=======
+>>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
     } catch(e) {
       // Set `_error` state to true if Firebase initialization fails
       setState(() {
@@ -64,20 +67,28 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     // Show error message if initialization failed
     if(_error) {
+<<<<<<< HEAD
 
       return MyApp();
 
       // return Container();
 
+=======
+      return Container();
+>>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
     }
 
     // Show a loader until FlutterFire is initialized
     if (!_initialized) {
+<<<<<<< HEAD
 
       return MyApp();
 
       // return Container();
 
+=======
+      return Container();
+>>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
     }
 
     return MyApp();
