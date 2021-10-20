@@ -31,7 +31,7 @@ class _Check_resultState extends State<Check_result> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -40,13 +40,13 @@ class _Check_resultState extends State<Check_result> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              padding: EdgeInsets.fromLTRB(10, 40, 0, 0),
               child: Text("VIEW RESULT", style: TextStyle(color: Colors.red, fontSize: 25.0),),
             ),
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: Container(
-                margin: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(10, 60, 10, 10),
                 padding: EdgeInsets.all(10.0),
                 width: 1400.0,
                 height: 370.0,
@@ -169,7 +169,7 @@ class _Check_resultState extends State<Check_result> {
                     ),
                     Center(
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(100, 0, 0, 0),
+                        margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
                         width: 200.0,
                         height: 50.0,
                        

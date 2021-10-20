@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -18,27 +19,36 @@ class _LoginState extends State<Login> {
   //   scrollDirection: Axis.vertical,
   // child:
   Widget build(BuildContext context) {
+
     CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+    // CollectionReference users = FirebaseFirestore.instance.collection('users');
+
     return Scaffold(
+      // appBar:AppBar(
+      //     automaticallyImplyLeading: true,
+      // ),
+      
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/background.jpg"), fit: BoxFit.fill)),
-        child: Center(
-          child: Container(
-            width: 350.0,
-            height: 900,
-            padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
-            margin: EdgeInsets.fromLTRB(30, 100, 20, 50),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              // border: BoxBorder(2.0),
-            ),
-            child: ListView(
-              children: [
-                Column(
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [
+            Center(
+              child: Container(
+                width: 400.0,
+                height: 500,
+                padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
+                margin: EdgeInsets.fromLTRB(30, 100, 20, 30),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  // border: BoxBorder(2.0),
+                ),
+                child: Column(
                   children: [
                     Container(
                       height: 150,
@@ -98,6 +108,7 @@ class _LoginState extends State<Login> {
                                 height: 30,
                               ),
                               TextFormField(
+                                
                                 controller: _password,
                                 obscureText: true,
                                 obscuringCharacter: ("*"),
@@ -120,6 +131,7 @@ class _LoginState extends State<Login> {
                                         BorderRadius.all(Radius.circular(50)),
                                   ),
                                   prefixIcon: Icon(Icons.password),
+                                  
                                   hintText: 'Write your password',
                                   labelText: 'Password',
                                   labelStyle: TextStyle(
@@ -136,14 +148,19 @@ class _LoginState extends State<Login> {
                                 },
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 15,
                               ),
                               Container(
                                 alignment: Alignment.topRight,
                                 child: TextButton(
                                     onPressed: () {
-                                      //Navigator.pushNamed(context, '/forget');
-                                      final c1 = Crypt.sha256('amubieya');
+
+                                      // Navigator.pushNamed(context, '/forget');
+                                      // final c1 = Crypt.sha256('amubieya');
+                                      // print(c1);
+
+                                      // Navigator.pushNamed(context, '/forget');
+                                      final c1 = Crypt.sha256('islamiat');
                                       print(c1);
                                     },
                                     child: Text(
@@ -156,14 +173,20 @@ class _LoginState extends State<Login> {
                                     )),
                               ),
                               SizedBox(
-                                height: 10,
+                                height: 20,
                               ),
                               Container(
-                                width: 300,
-                                height: 75,
+                                width: 350,
+                                height: 85,
                                 color: Colors.red,
                                 child: TextButton(
+                                  // onPressed: (){
+                                  //   if(_formKey.currentState!.validate()){
+                                  //      Navigator.pushNamed(context, '/dash');
+                                  //   }
+                                  // },
                                     onPressed: () async {
+                                      SharedPreferences prefs = await SharedPreferences.getInstance();
                                       if (_formKey.currentState!.validate()) {
                                         final response = await users
                                             .doc(_matricNo.text
@@ -177,6 +200,18 @@ class _LoginState extends State<Login> {
                                           if (hashedPassword
                                               .match(_password.text)) {
                                             print("Correct Password");
+                                          await prefs.setString("matric_no", response.get('matric_num'));
+                                           await prefs.setString("fname", response.get('fname'));
+                                           await prefs.setString("lname", response.get('lname'));
+                                           await prefs.setString("email", response.get('email'));
+                                           await prefs.setString("level", response.get('level'));
+                                           await prefs.setString("programme", response.get('Programme'));
+                                           await prefs.setString("mname", response.get('mname'));
+                                           await prefs.setString("department", response.get('Department'));
+                                           await prefs.setString("faculty", response.get('Faculty'));
+                                           await prefs.setString("state_of_origin", response.get('state_of_origin'));
+                                           await prefs.setString("gender", response.get('gender'));
+                                           await prefs.setString("Admission", response.get('Admission'));
                                             Navigator.pushNamed(
                                                 context, '/dash');
                                           } else {
@@ -190,6 +225,8 @@ class _LoginState extends State<Login> {
 
                                       // Navigator.pushNamed(context, '/dash');
                                     },
+                                   
+
                                     child: Text(
                                       "Log In",
                                       style: TextStyle(
@@ -201,9 +238,9 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

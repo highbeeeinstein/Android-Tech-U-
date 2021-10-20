@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
@@ -9,6 +10,31 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+   String matric_num = "";
+  String fname = "";
+  String lname = "";
+  String email = "";
+  String level = "";
+  String Programme = "";
+  String mname = "";
+  void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      matric_num = '${prefs.getString('matric_no')}';
+      fname = '${prefs.getString('fname')}';
+      lname = '${prefs.getString('lname')}';
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +53,7 @@ class _DashboardState extends State<Dashboard> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
          height: double.infinity,
               width: double.infinity,
@@ -40,11 +66,13 @@ class _DashboardState extends State<Dashboard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Account Dashboard"),
-                Text("125/18/1/0043", style: TextStyle(color: Colors.red, fontSize: 20),),
+                Text(
+                  matric_num, 
+                style: TextStyle(color: Colors.red, fontSize: 20),),
                 SizedBox(
                   height: 10,
                 ),
-                Text("WAHAB IBRAHEEM IYANDA", style: TextStyle(color: Colors.red, fontSize: 20),),
+                Text("$lname $fname $mname", style: TextStyle(color: Colors.red, fontSize: 20),),
                 SizedBox(
                   height: 10,
                 ),
@@ -79,8 +107,8 @@ class _DashboardState extends State<Dashboard> {
                          child:
                       Column(
                         children: [
-                          Text("Part 3", style: TextStyle(fontSize:25)),
-                          Text("Level", style: TextStyle(fontSize:25))
+                          Text(level, style: TextStyle(fontSize:20)),
+                          Text("Level", style: TextStyle(fontSize:20))
                         ],
                       ),
                       ),
@@ -122,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                          padding: EdgeInsets.fromLTRB(0, 30, 10, 0),
                         child: Column(
                           children: [
-                            Text("Computer Science", style: TextStyle(fontSize:20)),
+                            Text(Programme, style: TextStyle(fontSize:20)),
                             SizedBox(
                               height: 10,
                             ),
@@ -264,7 +292,7 @@ class _DashboardState extends State<Dashboard> {
                                          Text("3", style: TextStyle(fontSize: 20),)
                                         ),
                                     DataCell(Text("CSC 305", style: TextStyle(fontSize: 20),)),
-                                    DataCell(Text("operating System", style: TextStyle(fontSize: 20),)),
+                                    DataCell(Text("Operating System", style: TextStyle(fontSize: 20),)),
                                      DataCell(Text("2021", style: TextStyle(fontSize: 20),)),
                                     DataCell(Text("Second", style: TextStyle(fontSize: 20),)),
                                     DataCell(Text("300", style: TextStyle(fontSize: 20),)),
@@ -357,7 +385,7 @@ class _DashboardState extends State<Dashboard> {
                           Container(
                             color: Colors.white,
                             padding: EdgeInsets.all(10),
-                            margin: EdgeInsets.fromLTRB(100, 0, 0, 20),
+                            margin: EdgeInsets.fromLTRB(280, 0, 0, 20),
                             child: Text(
                               "Total Units: 24", style: TextStyle(fontSize: 20)
                             ),
@@ -375,16 +403,50 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-Widget myDrawer(BuildContext context) {
-  return Drawer(
+class myDrawer extends StatefulWidget {
+  const myDrawer({ Key? key }) : super(key: key);
+
+  @override
+  _myDrawerState createState() => _myDrawerState();
+}
+
+class _myDrawerState extends State<myDrawer> {
+     String matric_num = "";
+  String fname = "";
+  String lname = "";
+  String email = "";
+  String level = "";
+  String Programme = "";
+  String mname = "";
+  void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      matric_num = '${prefs.getString('matric_no')}';
+      fname = '${prefs.getString('fname')}';
+      lname = '${prefs.getString('lname')}';
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
+  @override
+  Widget build(BuildContext context) {
+   return Drawer(
     child: ListView(
       children: [
         UserAccountsDrawerHeader(
           decoration: BoxDecoration(
                 color: Colors.red,
           ),
-          accountName: Text("Wahab Ibraheem Iyanda"),
-          accountEmail: Text("wahabibraheemiyanda@gmail.com"),
+          accountName: Text("$lname $fname $mname"),
+          accountEmail: Text(email),
           currentAccountPicture: CircleAvatar(
             
             backgroundImage: AssetImage('assets/img_avatar2.png'),
@@ -450,6 +512,14 @@ Widget myDrawer(BuildContext context) {
            hoverColor: Colors.red,
           onTap: () {
             Navigator.pushNamed(context, '/bed');
+          },
+        ),
+        ListTile(
+          title: Text("Tech-U E-libarary"),
+          leading: Icon(FontAwesomeIcons.book),
+           hoverColor: Colors.red,
+          onTap: () {
+            Navigator.pushNamed(context, '/libarary');
           },
         ),
         ListTile(
@@ -577,7 +647,221 @@ Widget myDrawer(BuildContext context) {
       ],
     ),
   );
+  }
 }
+// Widget myDrawer(BuildContext context) {
+  
+
+//   return Drawer(
+//     child: ListView(
+//       children: [
+//         UserAccountsDrawerHeader(
+//           decoration: BoxDecoration(
+//                 color: Colors.red,
+//           ),
+//           accountName: Text("Wahab Ibraheem Iyanda"),
+//           accountEmail: Text("wahabibraheemiyanda@gmail.com"),
+//           currentAccountPicture: CircleAvatar(
+            
+//             backgroundImage: AssetImage('assets/img_avatar2.png'),
+            
+//           ),
+//         ),
+//         ListTile(
+//           title: Text('Dashboard'),
+//           leading: Icon(FontAwesomeIcons.tachometerAlt),
+//           hoverColor: Colors.red,
+//           focusColor: Colors.blue,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/dash');
+//           },
+//         ),
+//         ListTile(
+//           title: Text("Student profile"),
+//           leading: Icon(Icons.account_circle),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/profile');
+//           },
+//         ),
+//         Divider(
+//           height: 0.2,
+//         ),
+//         ListTile(
+//           title: Text("Course Registration"),
+//           leading: Icon(FontAwesomeIcons.book),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/register');
+//           },
+//         ),
+//          ListTile(
+//               title: Text("My Email Address"),
+//               leading: Icon(FontAwesomeIcons.envelope),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               Navigator.pushNamed(context, '/email');
+//           },
+//             ),
+//         ListTile(
+//               title: Text("Course History"),
+//               leading: Icon(FontAwesomeIcons.book),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               Navigator.pushNamed(context, '/history');
+//           },
+//             ),
+            
+//         ListTile(
+//           title: Text("Lecturer Assessment"),
+//           leading: Icon(Icons.lock_clock_rounded),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/assess');
+//           },
+//         ),
+//         ListTile(
+//           title: Text("Bed Space"),
+//           leading: Icon(FontAwesomeIcons.bed),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/bed');
+//           },
+//         ),
+//         ListTile(
+//           title: Text("Tech-U E-libarary"),
+//           leading: Icon(FontAwesomeIcons.book),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/libarary');
+//           },
+//         ),
+//         ListTile(
+//           title: Text("Internet Access"),
+//           leading: Icon(Icons.wifi),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/internet');
+//           },
+//         ),
+//         // ListTile(
+//         //   title: Text("Assessment"),
+//         //   leading: Icon(Icons.lock_clock_rounded),
+//         //   onTap: () {
+//         //     Navigator.pushNamed(context, '/login');
+//         //   },
+//         // ),
+//         ListTile(
+//           title: Text("Result"),
+//           leading: Icon(FontAwesomeIcons.chartBar),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/result');
+//           },
+//         ),
+//         ExpansionTile(
+//           title: Text("Other Pages"),
+//           leading: Icon(FontAwesomeIcons.dropbox),
+//           children: [
+            
+//             ListTile(
+//               title: Text("Courseware"),
+//               leading: Icon(FontAwesomeIcons.book),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//               launch("https://courseware.tech-u.edu.ng/");
+//           },
+//             ),
+//             ListTile(
+//               title: Text("E-Exam"),
+//               leading: Icon(FontAwesomeIcons.edit),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//               launch("https://tees.tech-u.edu.ng/#/auth/login");
+//           },
+//             ),
+//             ListTile(
+//               title: Text("E-libarary"),
+//               leading: Icon(FontAwesomeIcons.briefcase),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+
+//           },
+//             ),
+//             ListTile(
+//               title: Text("E-Learning"),
+//               leading: Icon(FontAwesomeIcons.briefcase),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//           },
+//             )
+//           ],
+          
+//           ),
+//           ExpansionTile(
+//           title: Text("Downloads"),
+          
+//           leading: Icon(FontAwesomeIcons.dropbox),
+//           children: [
+            
+//             ListTile(
+//               title: Text("Lecture TimeTable"),
+//               leading: Icon(FontAwesomeIcons.table),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//               launch("https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf");
+//           },
+//             ),
+//             ListTile(
+//               title: Text("E-Exam Guide"),
+//               leading: Icon(FontAwesomeIcons.table),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//               launch("https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf");
+//           },
+//             ),
+//             ListTile(
+//               title: Text("Academic Calendar"),
+//               leading: Icon(FontAwesomeIcons.table),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//                  launch("https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf");
+//               // Navigator.pushNamed(context, '/');
+              
+//           },
+//             ),
+//             ListTile(
+//               title: Text("Fee Structure"),
+//               leading: Icon(FontAwesomeIcons.table),
+//                hoverColor: Colors.red,
+//               onTap: () {
+//               // Navigator.pushNamed(context, '/');
+//               launch(" https://www.tech-u.edu.ng/documents/school-fees-structure.pdf");
+             
+//           },
+//             )
+//           ],
+          
+//           ),
+        
+//         ListTile(
+//           title: Text("Log Out"),
+//           leading: Icon(FontAwesomeIcons.signOutAlt),
+//            hoverColor: Colors.red,
+//           onTap: () {
+//             Navigator.pushNamed(context, '/login');
+//           },
+//         ),
+//       ],
+//     ),
+//   );
+// }
 class Alaye extends StatefulWidget {
   const Alaye({Key? key}) : super(key: key);
 

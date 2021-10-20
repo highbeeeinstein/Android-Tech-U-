@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'dashboard.dart';
@@ -12,6 +13,26 @@ class Student_mail extends StatefulWidget {
 }
 
 class _Student_mailState extends State<Student_mail> {
+   String email = "";
+   String level = "";
+   String Programme = "";
+   String mname = "";
+    void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+     
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
   //  String email="https://mail.google.com/mail/u/0/#inbox";
   // void _launchEmail() async {
   //   final Uri params = Uri(
@@ -43,7 +64,7 @@ class _Student_mailState extends State<Student_mail> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
          height: double.infinity,
               width: double.infinity,
@@ -60,7 +81,7 @@ class _Student_mailState extends State<Student_mail> {
                 // SizedBox(
                 //   height: 10,
                 // ),
-                Text("ibraheem.wahab@tech-u.edu.ng", style: TextStyle(color: Colors.red, fontSize: 20),),
+                Text(email, style: TextStyle(color: Colors.red, fontSize: 20),),
                 SizedBox(
                   height: 10,
                 ),
@@ -95,8 +116,8 @@ class _Student_mailState extends State<Student_mail> {
                          child:
                       Column(
                         children: [
-                          Text("Part 3", style: TextStyle(fontSize:25)),
-                          Text("Level", style: TextStyle(fontSize:25))
+                          Text(level, style: TextStyle(fontSize:20)),
+                          Text("Level", style: TextStyle(fontSize:20))
                         ],
                       ),
                       ),
@@ -138,7 +159,7 @@ class _Student_mailState extends State<Student_mail> {
                          padding: EdgeInsets.fromLTRB(0, 30, 10, 0),
                         child: Column(
                           children: [
-                            Text("Computer Science", style: TextStyle(fontSize:20)),
+                            Text(Programme, style: TextStyle(fontSize:20)),
                             SizedBox(
                               height: 10,
                             ),
@@ -208,7 +229,7 @@ class _Student_mailState extends State<Student_mail> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          padding: EdgeInsets.fromLTRB(100, 20, 10, 10),
+                          padding: EdgeInsets.fromLTRB(40, 20, 10, 10),
                           child: Text(
                             "Your Email Address", style: TextStyle(color:Colors.black,
                             fontSize: 17.0, fontWeight: FontWeight.bold
@@ -223,7 +244,7 @@ class _Student_mailState extends State<Student_mail> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(FontAwesomeIcons.envelope,),
-                              Text("ibraheem.wahab@tech-u.edu.ng",
+                              Text(email,
                                       style: TextStyle(fontSize: 19),
                               ),
                             ],

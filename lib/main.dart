@@ -10,14 +10,15 @@ import 'package:flutter_application_1/internet.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/mail.dart';
 import 'package:flutter_application_1/profile.dart';
-import 'package:flutter_application_1/registration.dart';
+import 'package:flutter_application_1/registration.dart';  
 import 'package:flutter_application_1/reset.dart';
 import 'package:flutter_application_1/result.dart';
 import 'package:flutter_application_1/signup.dart';
 // import 'package:flutter_application_1/expand.dart';
 import 'package:flutter_application_1/slider.dart';
+import 'package:flutter_application_1/tech-libarary.dart';
 import 'package:flutter_application_1/update.dart';
-import 'package:flutter_application_1/view_history.dart';
+import 'package:flutter_application_1/view_history.dart'; 
 import 'package:flutter_application_1/view_result.dart';
 
 void main() {
@@ -43,7 +44,9 @@ class _AppState extends State<App> {
       setState(() {
         _initialized = true;
       });
-    } catch(e) { 
+
+    } catch(e) {
+    } catch(e) {
       // Set `_error` state to true if Firebase initialization fails
       setState(() {
         _error = true;
@@ -61,12 +64,20 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     // Show error message if initialization failed
     if(_error) {
-      return Container();
+
+      return MyApp();
+
+      // return Container();
+
     }
 
     // Show a loader until FlutterFire is initialized
     if (!_initialized) {
-      return Container();
+
+      return MyApp();
+
+      // return Container();
+
     }
 
     return MyApp();
@@ -78,9 +89,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, 
       title: 'Flutter Demo',
         routes: {
+          // '/login': (context) => Dashboard(),
         '/login': (context) => Login(),
         '/signup': (context) => Sign_up(),
           '/forget':(context)=> Forgot_password(),
@@ -98,6 +110,7 @@ class MyApp extends StatelessWidget {
           '/update':(context) => Update_profile(),
             '/view':(context) => View_result(),
              '/hist':(context) => View_history(),
+             '/libarary':(context) => E_Libarary(),
         },
       // theme: ThemeData(
       //   primarySwatch: Colors.red,

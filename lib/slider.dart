@@ -10,10 +10,10 @@ class Image_slider extends StatefulWidget {
 
 class _Image_sliderState extends State<Image_slider> {
   final images=[
-    'assets/background.jpg',
-    'assets/logo_login.png',
-    'assets/slider_3.jfif',
-    'assets/slider_4.jfif',
+    'assets/slide1.jpg',
+    'assets/slide2.jpg',
+    'assets/slide3.jpg',
+    'assets/slide4.jpg',
     'assets/slider_2.jfif',
     'assets/slider.jfif',
     'assets/slider_5.jfif',

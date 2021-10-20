@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,6 +10,42 @@ class Student_profile extends StatefulWidget {
 }
 
 class _Student_profileState extends State<Student_profile> {
+    String matric_num = "";
+  String fname = "";
+  String lname = "";
+  String email = "";
+  String level = "";
+  String Programme = "";
+  String mname = "";
+  String Faculty = "";
+  String Department = "";
+  String Admission = "";
+  String gender = "";
+  String state_of_origin = "";
+
+  void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      matric_num = '${prefs.getString('matric_no')}';
+      fname = '${prefs.getString('fname')}';
+      lname = '${prefs.getString('lname')}';
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+       Faculty = '${prefs.getString('faculty')}';
+        Department = '${prefs.getString('department')}';
+        Admission = '${prefs.getString('Admission')}';
+        gender = '${prefs.getString('gender')}';
+        state_of_origin = '${prefs.getString('state_of_origin')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
   //  static late SharedPreferences _preferences;
   //  static const _KeyUser ='user';
   @override
@@ -32,7 +66,7 @@ class _Student_profileState extends State<Student_profile> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -50,7 +84,7 @@ class _Student_profileState extends State<Student_profile> {
                   ),
                 ),
                 SizedBox(
-                  height: 10.0,
+                  height: 10.0, 
                 ),
                 Center(
                   child: Container(
@@ -115,7 +149,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Part:", style: TextStyle(fontSize: 20),),
-                                Text("Part 3", style: TextStyle(color: Colors.red, fontSize: 20),),
+                                Text(level, style: TextStyle(color: Colors.red, fontSize: 20),),
                                
                               ],
                             ),
@@ -159,7 +193,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Gender:", style: TextStyle(fontSize: 20),),
-                                Text("Male", style: TextStyle(color: Colors.red, fontSize: 20),),
+                                Text(gender, style: TextStyle(color: Colors.red, fontSize: 20),),
                                
                               ],
                             ),
@@ -252,7 +286,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("State of Origin:", style: TextStyle(fontSize: 20),),
-                                Text("OYO", style: TextStyle(color: Colors.red, fontSize: 20),),
+                                Text(state_of_origin, style: TextStyle(color: Colors.red, fontSize: 20),),
                                
                               ],
                             ),
@@ -324,8 +358,8 @@ class _Student_profileState extends State<Student_profile> {
                             height: 30,
                             width: 100,
                             color: Colors.redAccent,
-                            margin: EdgeInsets.fromLTRB(80, 2, 80, 2),
-                            padding: EdgeInsets.all(10),
+                            margin: EdgeInsets.fromLTRB(60, 2, 80, 2),
+                            padding: EdgeInsets.all(2),
                             child: TextButton(
                               onPressed: (){
                                   Navigator.pushNamed(context, '/update');
@@ -350,7 +384,7 @@ class _Student_profileState extends State<Student_profile> {
                               children: [
                                 Container(
                                   padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-                                  child: Text("Matric No: 125/18/1/0043", style: TextStyle(color: Colors.red,
+                                  child: Text("Matric No: $matric_num", style: TextStyle(color: Colors.red,
                                         fontSize: 20.0,
                                   ),),
                                 ),
@@ -372,8 +406,8 @@ class _Student_profileState extends State<Student_profile> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text("Mr.", style: TextStyle(fontSize: 17),),
-                                      Text("IBRAHEEM", style: TextStyle(fontSize: 17),)
+                                      Text("Mr/Mrs.", style: TextStyle(fontSize: 17),),
+                                      Text(fname, style: TextStyle(fontSize: 17),)
                                     ],
                                   ),
                                 ),
@@ -395,8 +429,8 @@ class _Student_profileState extends State<Student_profile> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text("IYANDA", style: TextStyle(fontSize: 17),),
-                                      Text("WAHAB", style: TextStyle(fontSize: 17),)
+                                      Text(mname, style: TextStyle(fontSize: 17),),
+                                      Text(lname, style: TextStyle(fontSize: 17),)
                                     ],
                                   ),
                                 ),
@@ -455,7 +489,7 @@ class _Student_profileState extends State<Student_profile> {
                                             
                                             Container(
                                               padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
-                                              child: Text("wahabibraheem@tech-u.edu.ng", style: TextStyle(
+                                              child: Text(email, style: TextStyle(
                                                 color: Colors.red
                                               ),)),
                                               Divider(
@@ -480,7 +514,7 @@ class _Student_profileState extends State<Student_profile> {
                                             
                                             Container(
                                               padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
-                                              child: Text("Computer Science", style: TextStyle(
+                                              child: Text(Programme, style: TextStyle(
                                                 color: Colors.red
                                               ),)),
                                               Divider(
@@ -505,7 +539,7 @@ class _Student_profileState extends State<Student_profile> {
                                             
                                             Container(
                                               padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
-                                              child: Text("Mathematics and Computational Sciences", style: TextStyle(
+                                              child: Text(Department, style: TextStyle(
                                                 color: Colors.red
                                               ),)),
                                               Divider(
@@ -530,7 +564,7 @@ class _Student_profileState extends State<Student_profile> {
                                             
                                             Container(
                                               padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
-                                              child: Text("Natural and Applied Sciences", style: TextStyle(
+                                              child: Text(Faculty, style: TextStyle(
                                                 color: Colors.red
                                               ),)),
                                               Divider(
@@ -555,7 +589,7 @@ class _Student_profileState extends State<Student_profile> {
                                             
                                             Container(
                                               padding: EdgeInsets.fromLTRB(100, 0, 0, 0),
-                                              child: Text("2018/2019", style: TextStyle(
+                                              child: Text(Admission, style: TextStyle(
                                                 color: Colors.red
                                               ),)),
                                               // Divider(

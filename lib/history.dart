@@ -30,7 +30,7 @@ class _Course_historyState extends State<Course_history> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -39,13 +39,13 @@ class _Course_historyState extends State<Course_history> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+              padding: EdgeInsets.fromLTRB(10, 40, 0, 0),
               child: Text("VIEW COURSE HISTORY", style: TextStyle(color: Colors.red, fontSize: 25.0),),
             ),
             Padding(
               padding: const EdgeInsets.all(14.0),
               child: Container(
-                margin: EdgeInsets.all(10.0),
+                margin: EdgeInsets.fromLTRB(10, 60, 10, 10),
                 padding: EdgeInsets.all(10.0),
                 width: 1400.0,
                 height: 370.0,

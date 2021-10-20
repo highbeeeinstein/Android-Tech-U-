@@ -32,7 +32,7 @@ class _Reset_passwordState extends State<Reset_password> {
                 color: Colors.white,
                 margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
                 width: 400.0,
-                height: 600.0,
+                height: 630.0,
                 child: Column(
                   children: [
                     Container(

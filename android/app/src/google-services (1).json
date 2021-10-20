@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "861864526251",
+    "project_id": "tech-u-portal",
+    "storage_bucket": "tech-u-portal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861864526251:android:90175e2dd7fe4ffea912ee",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861864526251-o0jivq20dc88q341h1t0v2476sqc1er7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmuGNN-Tz3CNADD3NxUKeHg6EBBDvrp6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861864526251-o0jivq20dc88q341h1t0v2476sqc1er7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

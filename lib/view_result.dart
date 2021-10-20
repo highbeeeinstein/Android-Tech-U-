@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class View_result extends StatefulWidget {
   const View_result({ Key? key }) : super(key: key);
 
@@ -8,6 +9,35 @@ class View_result extends StatefulWidget {
 }
 
 class _View_resultState extends State<View_result> {
+    String matric_num = "";
+  String fname = "";
+  String lname = "";
+  String email = "";
+  String level = "";
+  String Programme = "";
+  String mname = "";
+  String Faculty = "";
+  String Department = "";
+  void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      matric_num = '${prefs.getString('matric_no')}';
+      fname = '${prefs.getString('fname')}';
+      lname = '${prefs.getString('lname')}';
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+       Faculty = '${prefs.getString('faculty')}';
+        Department = '${prefs.getString('department')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +45,7 @@ class _View_resultState extends State<View_result> {
            height: double.infinity,
               width: double.infinity,
               color: Colors.grey,
-              padding: EdgeInsets.fromLTRB(10, 20, 12, 0),
+              padding: EdgeInsets.fromLTRB(5, 10, 5, 0),
               child: ListView(
                 scrollDirection: Axis.vertical,
                 children: [
@@ -23,20 +53,20 @@ class _View_resultState extends State<View_result> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text("STUDENT \n RESULT \n INFORMATION", style: TextStyle(fontSize: 15),),
                           Container(
                             padding: EdgeInsets.all(6),
-                            margin:EdgeInsets.all(10),
+                            margin:EdgeInsets.only(left: 13, right:10, top: 10),
                             width: 100.0,
-                            height: 50.0,
+                            height: 70.0,
                             color: Colors.red,
                             child: Row(
                               children: [
                                 Icon(FontAwesomeIcons.print, color: Colors.white,),
                                 Container(
-                                  padding: EdgeInsets.all(4),
+                                  padding: EdgeInsets.all(0),
                                   // child: Text("Print", style: TextStyle(color:Colors.white, fontSize: 19)))
                                   child: TextButton(
                                     onPressed:(){}, 
@@ -47,10 +77,10 @@ class _View_resultState extends State<View_result> {
                             ),
                           ),
                           Container(
-                             padding: EdgeInsets.all(10),
-                            margin:EdgeInsets.all(10),
+                             padding: EdgeInsets.all(6),
+                            margin:EdgeInsets.all(13),
                             width: 100.0,
-                            height: 50.0,
+                            height: 70.0,
                             color: Colors.red,
                             child: Row(
                               children: [
@@ -123,15 +153,15 @@ class _View_resultState extends State<View_result> {
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Matric No: "),
+                          child: Text("Matric No: $matric_num"),
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Student Name "),
+                          child: Text("Student Name: $lname $fname $mname "),
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Level: "),
+                          child: Text("Level: $level "),
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
@@ -146,15 +176,15 @@ class _View_resultState extends State<View_result> {
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Programme: "),
+                          child: Text("Programme: $Programme"),
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Department: "),
+                          child: Text("Department: $Department"),
                         ),
                         Container(
                            padding: EdgeInsets.fromLTRB(20, 0, 0, 10),
-                          child: Text("Faculty: "),
+                          child: Text("Faculty: $Faculty "),
                         ),
                          Divider(
                           thickness: 2.0,
@@ -167,10 +197,11 @@ class _View_resultState extends State<View_result> {
                          SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        // width: 1300,
-                        margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                        width: 1300,
+                        margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: DataTable(
                           // decoration: BoxDecoration(
 

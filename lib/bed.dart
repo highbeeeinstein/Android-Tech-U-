@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dashboard.dart';
 class Bedspace extends StatefulWidget {
@@ -10,6 +11,31 @@ class Bedspace extends StatefulWidget {
 }
 
 class _BedspaceState extends State<Bedspace> {
+   String matric_num = "";
+  String fname = "";
+  String lname = "";
+  String email = "";
+  String level = "";
+  String Programme = "";
+  String mname = "";
+  void initSharedPreference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      matric_num = '${prefs.getString('matric_no')}';
+      fname = '${prefs.getString('fname')}';
+      lname = '${prefs.getString('lname')}';
+      email = '${prefs.getString('email')}';
+       level = '${prefs.getString('level')}';
+      Programme = '${prefs.getString('programme')}';
+      mname = '${prefs.getString('mname')}';
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initSharedPreference();
+  }
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -28,7 +54,7 @@ class _BedspaceState extends State<Bedspace> {
           fit: BoxFit.cover,
         ),
       ),
-      drawer: myDrawer(context),
+      drawer: myDrawer(),
       body: Container(
          height: double.infinity,
               width: double.infinity,
@@ -45,7 +71,7 @@ class _BedspaceState extends State<Bedspace> {
                 // SizedBox(
                 //   height: 10,
                 // ),
-                Text("WAHAB IBRAHEEM IYANDA", style: TextStyle(color: Colors.red, fontSize: 20),),
+                Text("$lname $fname $mname", style: TextStyle(color: Colors.red, fontSize: 20),),
                 SizedBox(
                   height: 10,
                 ),
@@ -80,8 +106,8 @@ class _BedspaceState extends State<Bedspace> {
                          child:
                       Column(
                         children: [
-                          Text("Part 3", style: TextStyle(fontSize:25)),
-                          Text("Level", style: TextStyle(fontSize:25))
+                          Text(level, style: TextStyle(fontSize:20)),
+                          Text("Level", style: TextStyle(fontSize:20))
                         ],
                       ),
                       ),
@@ -123,7 +149,7 @@ class _BedspaceState extends State<Bedspace> {
                          padding: EdgeInsets.fromLTRB(0, 30, 10, 0),
                         child: Column(
                           children: [
-                            Text("Computer Science", style: TextStyle(fontSize:20)),
+                            Text(Programme, style: TextStyle(fontSize:20)),
                             SizedBox(
                               height: 10,
                             ),
@@ -195,7 +221,7 @@ class _BedspaceState extends State<Bedspace> {
                         Container(
                           padding: EdgeInsets.fromLTRB(30, 60, 30, 10),
                           child: Text(
-                            "Dear WAHAB IBRAHEEM IYANDA \n (125/18/1/0043),", style: TextStyle(color:Colors.black,
+                            "Dear $lname $fname $mname \n " + matric_num, style: TextStyle(color:Colors.black,
                             fontSize: 17.0, fontWeight: FontWeight.bold
                             ),
                           

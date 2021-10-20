@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'dashboard.dart';
-class Internet_access extends StatefulWidget {
-  const Internet_access({ Key? key }) : super(key: key);
+class E_Libarary extends StatefulWidget {
+  const E_Libarary({ Key? key }) : super(key: key);
 
   @override
-  _Internet_accessState createState() => _Internet_accessState();
+  _E_LibararyState createState() => _E_LibararyState();
 }
 
-class _Internet_accessState extends State<Internet_access> {
-     String matric_num = "";
-  String fname = "";
-  String lname = "";
-  String email = "";
-  String level = "";
-  String Programme = "";
-  String mname = "";
-  void initSharedPreference() async {
+class _E_LibararyState extends State<E_Libarary> {
+   String email = "";
+   String level = "";
+   String Programme = "";
+   String mname = "";
+    void initSharedPreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      matric_num = '${prefs.getString('matric_no')}';
-      fname = '${prefs.getString('fname')}';
-      lname = '${prefs.getString('lname')}';
+     
       email = '${prefs.getString('email')}';
        level = '${prefs.getString('level')}';
       Programme = '${prefs.getString('programme')}';
@@ -38,8 +35,8 @@ class _Internet_accessState extends State<Internet_access> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+     return Scaffold(
+        appBar: AppBar(
         actions: [
             Alaye(),
         ],
@@ -60,18 +57,18 @@ class _Internet_accessState extends State<Internet_access> {
               width: double.infinity,
               color: Colors.grey,
               padding: EdgeInsets.fromLTRB(10, 20, 12, 0),
-        child: ListView(
+       child: ListView(
           scrollDirection: Axis.vertical,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("INTERNET ACCESS LOGIN DETAILS"),
+                Text("MY EMAIL ADDRESS"),
                 // Text("125/18/1/0043", style: TextStyle(color: Colors.red, fontSize: 20),),
                 // SizedBox(
                 //   height: 10,
                 // ),
-                Text("$lname $fname $mname", style: TextStyle(color: Colors.red, fontSize: 20),),
+                Text(email, style: TextStyle(color: Colors.red, fontSize: 20),),
                 SizedBox(
                   height: 10,
                 ),
@@ -209,8 +206,8 @@ class _Internet_accessState extends State<Internet_access> {
                 SizedBox(
                   height: 30,
                 ),
-                Container(
-                  height: 220.0,
+                 Container(
+                  height: 300.0,
                   width: 1400.0,
                   margin: EdgeInsets.all(5),
                   // padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
@@ -219,9 +216,9 @@ class _Internet_accessState extends State<Internet_access> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          padding: EdgeInsets.fromLTRB(40, 60, 30, 10),
+                          padding: EdgeInsets.fromLTRB(40, 20, 10, 10),
                           child: Text(
-                            "Internet Access Login Details", style: TextStyle(color:Colors.black,
+                            "Your e-Library Account Details", style: TextStyle(color:Colors.black,
                             fontSize: 17.0, fontWeight: FontWeight.bold
                             ),
                           
@@ -229,12 +226,12 @@ class _Internet_accessState extends State<Internet_access> {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.fromLTRB(40, 10, 15, 10),
+                          padding: EdgeInsets.fromLTRB(30, 10, 10, 10),
                           child: Row(
-                             mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.wifi,),
-                              Text("Username: $matric_num",
+                              Icon(FontAwesomeIcons.envelope,),
+                              Text(email,
                                       style: TextStyle(fontSize: 19),
                               ),
                             ],
@@ -244,12 +241,33 @@ class _Internet_accessState extends State<Internet_access> {
                           child: Row(
                              mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.wifi,),
-                              Text("Password:IfmP29",
+                              Icon(FontAwesomeIcons.key,),
+                              Text("Password:Resource1234",
                                       style: TextStyle(fontSize: 19),
                               ),
                             ],
                           )),
+                          // Container(
+                          //    padding: EdgeInsets.fromLTRB(30, 10, 5, 10),
+                          //   child: Text("Change your password upon \n first login", 
+                          //   style: TextStyle(fontSize: 20),),
+                          // ),
+                           Container(
+                             padding: EdgeInsets.fromLTRB(20, 10, 5, 10),
+                            child: TextButton(
+                              onPressed: (){ 
+                                 //  if (_formKey.currentState!.validate()) {
+                                      //   Navigator.pushNamed(context, '/dash');
+                                      //  }
+
+                           launch('https://ebookcentral.proquest.com/auth/lib/ftuing/login.action');
+                      
+
+                              },
+                              child: Text("Go to e-Libarary", 
+                              style: TextStyle(color: Colors.blue, fontSize: 35),)
+                              )
+                          )
                        
                       ],
                     ),
@@ -257,12 +275,12 @@ class _Internet_accessState extends State<Internet_access> {
                  SizedBox(
                   height: 10.0,
                 ),
+           
               ],
             ),
           ],
         ),
       ),
-      
     );
   }
 }
