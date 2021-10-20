@@ -200,7 +200,7 @@ class _View_resultState extends State<View_result> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        width: 1300,
+                        width: 1400,
                         margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                         child: DataTable(
                           // decoration: BoxDecoration(
@@ -210,13 +210,13 @@ class _View_resultState extends State<View_result> {
                             headingRowColor: MaterialStateProperty.all(Color.fromRGBO(228, 242, 243, 1)),
                             // dataRowColor: MaterialStateProperty.all(Colors.blueGrey),
                             columns: [
-                              DataColumn(label: Text("S/N", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                              DataColumn(label: Text("COURSE CODE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                              DataColumn(label: Text("COURSE TITLE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                               DataColumn(label: Text("COURSE UNIT", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                                DataColumn(label: Text("SCORE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                                 DataColumn(label: Text("GRADE", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
-                              DataColumn(label: Text("COMMENT", style: TextStyle(fontSize: 25, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("S/N", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("COURSE CODE", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("COURSE TITLE", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                               DataColumn(label: Text("COURSE UNIT", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                                DataColumn(label: Text("SCORE", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                                 DataColumn(label: Text("GRADE", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
+                              DataColumn(label: Text("COMMENT", style: TextStyle(fontSize: 22, fontWeight:FontWeight.bold,),)),
                               // DataColumn(label: Text("Select")),
                             ],
                             rows: [
