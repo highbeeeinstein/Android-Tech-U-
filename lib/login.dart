@@ -17,13 +17,11 @@ class _LoginState extends State<Login> {
   TextEditingController _matricNo = TextEditingController();
   TextEditingController _password = TextEditingController();
   @override
-  // SingleChildScrollView(
-  //   scrollDirection: Axis.vertical,
-  // child:
+ 
   Widget build(BuildContext context) {
 
 
-    // CollectionReference users = FirebaseFirestore.instance.collection('users');
+   
 
     CollectionReference users = FirebaseFirestore.instance.collection('users');
 
@@ -33,8 +31,7 @@ class _LoginState extends State<Login> {
       // ),
       
 
-    // CollectionReference users = FirebaseFirestore.instance.collection('users');
-    // return Scaffold(
+    
 
       body: Container(
         height: double.infinity,
@@ -58,17 +55,6 @@ class _LoginState extends State<Login> {
                 ),
                 child: Column(
 
-        // child: Center(
-        //   child: Container(
-        //     width: 350.0,
-        //     height: 900,
-        //     padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
-        //     margin: EdgeInsets.fromLTRB(30, 100, 20, 50),
-        //     decoration: BoxDecoration(
-        //       color: Colors.white,
-        //       // border: BoxBorder(2.0),
-        //     ),
-            // child: ListView(
               children: [
                 Column(
 
@@ -131,9 +117,6 @@ class _LoginState extends State<Login> {
                                 height: 30,
                               ),
                               TextFormField(
-
-                                
-
                                 controller: _password,
                                 obscureText: true,
                                 obscuringCharacter: ("*"),
@@ -189,13 +172,13 @@ class _LoginState extends State<Login> {
                                       // final c1 = Crypt.sha256('amubieya');
                                       // print(c1);
 
-                                      // Navigator.pushNamed(context, '/forget');
-                                      final c1 = Crypt.sha256('islamiat');
+                                      Navigator.pushNamed(context, '/forget');
+                                      // final c1 = Crypt.sha256('islamiat');
 
                                       //Navigator.pushNamed(context, '/forget');
                                       // final c1 = Crypt.sha256('einstein');
 
-                                      print(c1);
+                                      // print(c1);
                                     },
                                     child: Text(
                                       "forgot your password?",
@@ -210,23 +193,9 @@ class _LoginState extends State<Login> {
 
                                 height: 20,
                               ),
-                              // Container(
-                              //   width: 350,
-                              //   height: 85,
-                              //   color: Colors.red,
-                              //   child: TextButton(
-                              //     // onPressed: (){
-                              //     //   if(_formKey.currentState!.validate()){
-                              //     //      Navigator.pushNamed(context, '/dash');
-                              //     //   }
-                              //     // },
-                              //       onPressed: () async {
-                              //         SharedPreferences prefs = await SharedPreferences.getInstance();
-
-                              //   height: 10,
-                              // ),
+                             
                               Container(
-                                width: 300,
+                                width: 350,
                                 height: 75,
                                 color: Colors.red,
                                 child: TextButton(
