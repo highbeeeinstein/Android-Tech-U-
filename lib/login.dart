@@ -1,10 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
+
 import 'package:shared_preferences/shared_preferences.dart';
-=======
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -22,28 +21,28 @@ class _LoginState extends State<Login> {
   //   scrollDirection: Axis.vertical,
   // child:
   Widget build(BuildContext context) {
-<<<<<<< HEAD
 
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
 
     // CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
 
     return Scaffold(
       // appBar:AppBar(
       //     automaticallyImplyLeading: true,
       // ),
       
-=======
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    return Scaffold(
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
+    // CollectionReference users = FirebaseFirestore.instance.collection('users');
+    // return Scaffold(
+
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage("assets/background.jpg"), fit: BoxFit.fill)),
-<<<<<<< HEAD
+
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
@@ -58,21 +57,21 @@ class _LoginState extends State<Login> {
                   // border: BoxBorder(2.0),
                 ),
                 child: Column(
-=======
-        child: Center(
-          child: Container(
-            width: 350.0,
-            height: 900,
-            padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
-            margin: EdgeInsets.fromLTRB(30, 100, 20, 50),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              // border: BoxBorder(2.0),
-            ),
-            child: ListView(
+
+        // child: Center(
+        //   child: Container(
+        //     width: 350.0,
+        //     height: 900,
+        //     padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
+        //     margin: EdgeInsets.fromLTRB(30, 100, 20, 50),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       // border: BoxBorder(2.0),
+        //     ),
+            // child: ListView(
               children: [
                 Column(
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
                   children: [
                     Container(
                       height: 150,
@@ -132,10 +131,9 @@ class _LoginState extends State<Login> {
                                 height: 30,
                               ),
                               TextFormField(
-<<<<<<< HEAD
+
                                 
-=======
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
                                 controller: _password,
                                 obscureText: true,
                                 obscuringCharacter: ("*"),
@@ -158,10 +156,7 @@ class _LoginState extends State<Login> {
                                         BorderRadius.all(Radius.circular(50)),
                                   ),
                                   prefixIcon: Icon(Icons.password),
-<<<<<<< HEAD
-                                  
-=======
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
                                   hintText: 'Write your password',
                                   labelText: 'Password',
                                   labelStyle: TextStyle(
@@ -178,17 +173,17 @@ class _LoginState extends State<Login> {
                                 },
                               ),
                               SizedBox(
-<<<<<<< HEAD
+
                                 height: 15,
-=======
-                                height: 10,
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
+                                // height: 10,
+
                               ),
                               Container(
                                 alignment: Alignment.topRight,
                                 child: TextButton(
                                     onPressed: () {
-<<<<<<< HEAD
+
 
                                       // Navigator.pushNamed(context, '/forget');
                                       // final c1 = Crypt.sha256('amubieya');
@@ -196,10 +191,10 @@ class _LoginState extends State<Login> {
 
                                       // Navigator.pushNamed(context, '/forget');
                                       final c1 = Crypt.sha256('islamiat');
-=======
+
                                       //Navigator.pushNamed(context, '/forget');
-                                      final c1 = Crypt.sha256('einstein');
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+                                      // final c1 = Crypt.sha256('einstein');
+
                                       print(c1);
                                     },
                                     child: Text(
@@ -212,31 +207,31 @@ class _LoginState extends State<Login> {
                                     )),
                               ),
                               SizedBox(
-<<<<<<< HEAD
+
                                 height: 20,
                               ),
-                              Container(
-                                width: 350,
-                                height: 85,
-                                color: Colors.red,
-                                child: TextButton(
-                                  // onPressed: (){
-                                  //   if(_formKey.currentState!.validate()){
-                                  //      Navigator.pushNamed(context, '/dash');
-                                  //   }
-                                  // },
-                                    onPressed: () async {
-                                      SharedPreferences prefs = await SharedPreferences.getInstance();
-=======
-                                height: 10,
-                              ),
+                              // Container(
+                              //   width: 350,
+                              //   height: 85,
+                              //   color: Colors.red,
+                              //   child: TextButton(
+                              //     // onPressed: (){
+                              //     //   if(_formKey.currentState!.validate()){
+                              //     //      Navigator.pushNamed(context, '/dash');
+                              //     //   }
+                              //     // },
+                              //       onPressed: () async {
+                              //         SharedPreferences prefs = await SharedPreferences.getInstance();
+
+                              //   height: 10,
+                              // ),
                               Container(
                                 width: 300,
                                 height: 75,
                                 color: Colors.red,
                                 child: TextButton(
                                     onPressed: () async {
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+                                       SharedPreferences prefs = await SharedPreferences.getInstance();
                                       if (_formKey.currentState!.validate()) {
                                         final response = await users
                                             .doc(_matricNo.text
@@ -250,7 +245,7 @@ class _LoginState extends State<Login> {
                                           if (hashedPassword
                                               .match(_password.text)) {
                                             print("Correct Password");
-<<<<<<< HEAD
+
                                           await prefs.setString("matric_no", response.get('matric_num'));
                                            await prefs.setString("fname", response.get('fname'));
                                            await prefs.setString("lname", response.get('lname'));
@@ -263,8 +258,7 @@ class _LoginState extends State<Login> {
                                            await prefs.setString("state_of_origin", response.get('state_of_origin'));
                                            await prefs.setString("gender", response.get('gender'));
                                            await prefs.setString("Admission", response.get('Admission'));
-=======
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
                                             Navigator.pushNamed(
                                                 context, '/dash');
                                           } else {
@@ -278,11 +272,7 @@ class _LoginState extends State<Login> {
 
                                       // Navigator.pushNamed(context, '/dash');
                                     },
-<<<<<<< HEAD
-                                   
 
-=======
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
                                     child: Text(
                                       "Log In",
                                       style: TextStyle(
@@ -294,18 +284,16 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-<<<<<<< HEAD
-              ),
-            ),
-          ],
-=======
+
+        
+
               ],
             ),
           ),
->>>>>>> 7c030cf3278cd4c5a2be8db38bef28f6e38c9de6
+
         ),
-      ),
-    );
+          ]),
+    ));
     // );
   }
 }
