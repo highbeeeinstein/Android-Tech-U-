@@ -14,11 +14,11 @@ class _Image_sliderState extends State<Image_slider> {
     'assets/slide2.jpg',
     'assets/slide3.jpg',
     'assets/slide4.jpg',
-    'assets/slider_2.jfif',
-    'assets/slider.jfif',
-    'assets/slider_5.jfif',
-    'assets/slider_6.jfif',
-    'assets/download.jfif',
+    'assets/tech3.jpg',
+    'assets/tech4.jpg',
+    'assets/tech5.jpg',
+    'assets/tech6.jpg',
+    'assets/tech7.jpg',
 
   ];
   @override

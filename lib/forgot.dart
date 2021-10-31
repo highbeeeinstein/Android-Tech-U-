@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 class Forgot_password extends StatefulWidget {
   const Forgot_password({ Key? key }) : super(key: key);
@@ -7,7 +8,10 @@ class Forgot_password extends StatefulWidget {
 }
 
 class _Forgot_passwordState extends State<Forgot_password> { 
+  TextEditingController _email = TextEditingController();
+  TextEditingController _matricNo = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +68,47 @@ class _Forgot_passwordState extends State<Forgot_password> {
                           key: _formKey,
                           child: Column(
                             children:[
+                              TextFormField(
+                                controller: _matricNo,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.red,
+                                      width: 3.0,
+                                    ),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(0)),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.red,
+                                      width: 2.0,
+                                    ),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50)),
+                                  ),
+                                  hoverColor: Colors.amber,
+                                  prefixIcon: const Icon(Icons.person),
+                                  hintText: 'Enter your Matric Number',
+                                  labelText: 'Login ID',
+                                  labelStyle: TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return 'Please enter your Login ID';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
                                 TextFormField(
+                                  controller: _email,
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
                                     filled: true,
@@ -105,17 +149,30 @@ class _Forgot_passwordState extends State<Forgot_password> {
                                         height: 70,
                                         width: 300,
                                         color: Colors.green,
-                                        child: TextButton(
-                                          onPressed: (){
+                                        child: TextButton (
+                                          onPressed: () async {
                                             // if (_formKey.currentState!.validate()) {
                                             //     Navigator.pushNamed(context, '/reset');
                                             //    }
                                             if (_formKey.currentState!.validate()) {
-                                                showAlertDialog(context);
+                                               final response = await users
+                                            .doc(_matricNo.text
+                                                .replaceAll("/", ''))
+                                            .get();
+                                        print(response.data().toString());
+                                        if (response.exists) {
+                                          print("User Exist");
+                                          final inputEmail = response.get("email");
+                                          if (inputEmail
+                                              .match(_email.text)) {
+                                            print("Correct Email");
+                                              //  showAlertDialog(context);
+                                                Navigator.pushNamed(context, '/reset');
+
                                             }
                                                
                                             
-                                          }, 
+                                          }}}, 
                                           child: Text("Reset Password", style: TextStyle(
                                             color: Colors.white, fontSize: 30,
                                             ),),

@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:progressive_image/progressive_image.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dashboard.dart';
@@ -22,8 +24,18 @@ class _Student_profileState extends State<Student_profile> {
   String Admission = "";
   String gender = "";
   String state_of_origin = "";
+  String image = "";
+  String lga = "";
+  String phone_num = "";
+  String dob = "";
+  String address = "";
+  String residence_state = "";
+  String residence_city = "";
+  
 
   void initSharedPreference() async {
+    //  CollectionReference users = FirebaseFirestore.instance.collection('users');
+      
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       matric_num = '${prefs.getString('matric_no')}';
@@ -38,7 +50,16 @@ class _Student_profileState extends State<Student_profile> {
         Admission = '${prefs.getString('Admission')}';
         gender = '${prefs.getString('gender')}';
         state_of_origin = '${prefs.getString('state_of_origin')}';
+         image = '${prefs.getString('image')}';
+         dob = '${prefs.getString('dob')}';
+         lga = '${prefs.getString('lga')}';
+         phone_num = '${prefs.getString('phone_num')}';
+         residence_city = '${prefs.getString('residence_city')}';
+         address = '${prefs.getString('address')}';
+         residence_state = '${prefs.getString('residence_state')}';
     });
+    //  final response = await users.doc(matric_num.replaceAll("/", '')).get();
+    //  image = response.get('image');
   }
 
   @override
@@ -50,6 +71,7 @@ class _Student_profileState extends State<Student_profile> {
   //  static const _KeyUser ='user';
   @override
   Widget build(BuildContext context) {
+     
     return Scaffold(
          appBar: AppBar(
         actions: [
@@ -108,14 +130,24 @@ class _Student_profileState extends State<Student_profile> {
                            
                           ),
                           child: Container(
-                            width: 50,
-                            height: 50,
+                            width: 100,
+                            height: 100,
+                            // child: CircleAvatar(
+                            //   radius: 50.0,
+                            //      child: ProgressiveImage(
+                            //     placeholder: AssetImage('assets/img_avatar2.png'), 
+                            //     thumbnail: NetworkImage(image), 
+                            //     image: NetworkImage(image), 
+                            //     width: 50.0, 
+                            //     height: 30.0
+                            //     ),
+                            // ),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage('assets/img_avatar2.png')
+                              image: DecorationImage( 
+                                image: NetworkImage(image)
                                 )
-                            ),
+                            ), 
                             // child: ClipOval(
                             //   //  radius: 50.0,
                               
@@ -131,7 +163,7 @@ class _Student_profileState extends State<Student_profile> {
                          Container(
                      margin: EdgeInsets.all(10),
                      padding: EdgeInsets.all(10),
-                    height: 500,
+                    height: 600,
                     width: 470,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey, width: 1.0),
@@ -215,6 +247,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Date of Birth:", style: TextStyle(fontSize: 20),),
+                                Text(dob, style: TextStyle(color: Colors.red, fontSize: 20),),
                                 // TextField("", style: TextStyle(color: Colors.red, fontSize: 20),),
                                 // TextField(
                                 //   onChanged: (date_of_birth){
@@ -242,7 +275,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("Phone Number:", style: TextStyle(fontSize: 20),),
-                                Text("", style: TextStyle(color: Colors.red, fontSize: 20),),
+                                Text(phone_num, style: TextStyle(color: Colors.red, fontSize: 20),),
                                
                               ],
                             ),
@@ -264,7 +297,7 @@ class _Student_profileState extends State<Student_profile> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text("LGA OF ORIGIN:", style: TextStyle(fontSize: 20),),
-                                Text("", style: TextStyle(color: Colors.red, fontSize: 20),),
+                                Text(lga, style: TextStyle(color: Colors.red, fontSize: 20),),
                                
                               ],
                             ),
@@ -313,6 +346,50 @@ class _Student_profileState extends State<Student_profile> {
                               ],
                             ),
                             SizedBox(
+                              height: 10.0,
+                            ),
+                             Divider(
+                              color: Colors.grey,
+                              thickness: 1.0,
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                           Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("State of Residence:", style: TextStyle(fontSize: 20),),
+                                Text(residence_state, style: TextStyle(color: Colors.red, fontSize: 20),),
+                               
+                              ],
+                            ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
+                             Divider(
+                              color: Colors.grey,
+                              thickness: 1.0,
+                            ),
+                          ],
+                        ),
+                       SizedBox(
+                          height: 10,
+                        ),
+                           Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text("City of Residence:", style: TextStyle(fontSize: 20),),
+                                Text(residence_city, style: TextStyle(color: Colors.red, fontSize: 20),),
+                               
+                              ],
+                            ),
+                            SizedBox(
                               height: 5.0,
                             ),
                              Divider(
@@ -336,8 +413,15 @@ class _Student_profileState extends State<Student_profile> {
                             border: Border.all(color: Colors.grey, width: 1.0),
                            
                           ),
-                          child: Text(
-                            "Address", style: TextStyle(fontSize: 25),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Address", style: TextStyle(fontSize: 25),
+                                
+                              ),
+                              Text(address, style: TextStyle(fontSize: 25),),
+                            ],
                           )
                         ),
                         SizedBox(

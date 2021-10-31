@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:crypt/crypt.dart';
 class Sign_up extends StatefulWidget {
   const Sign_up({ Key? key }) : super(key: key);
 
@@ -8,8 +10,47 @@ class Sign_up extends StatefulWidget {
 
 class _Sign_upState extends State<Sign_up> {
    final _formKey = GlobalKey<FormState>();
+  //  final String matricNo;
   @override
   Widget build(BuildContext context) {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+   TextEditingController firstName = TextEditingController();
+   TextEditingController lastName = TextEditingController();
+   TextEditingController email = TextEditingController();
+   TextEditingController password = TextEditingController();
+   TextEditingController matricNo = TextEditingController();
+   
+
+   Future<void> addUser() {
+    final c1 = Crypt.sha256(password.text);
+  return users
+    .doc(matricNo.text.replaceAll("/", ''))
+    .set({
+      'matric_num': matricNo.text,
+      'fname': firstName.text,
+      'lname' : lastName.text,
+      'password': c1.toString(),
+      'email': email.text,
+      // 'level': '',
+      // 'Programme': '',
+      // 'Admission': '',
+      // 'image': '',
+      // 'faculty': '',
+      // 'Department': '',
+      // 'mname': '',
+      // 'dob': '',
+      // 'gender': '',
+      // 'address': '',
+      // 'residence_city': '',
+      // 'residence_state': '',
+      // 'state_of_origin': '',
+      // 'lga': '',
+      // 'phone_num': '',
+      // 'age': 18
+    })
+    .then((value) => print("User Added"))
+    .catchError((error) => print("Failed to add user: $error"));
+}
     return Scaffold(
       body: Container(
             height: double.infinity,
@@ -52,7 +93,7 @@ class _Sign_upState extends State<Sign_up> {
                                        mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         TextFormField(
-                                          
+                                          controller: firstName,
                                            decoration: const InputDecoration(
                                               border: OutlineInputBorder(),
                                              focusedBorder: OutlineInputBorder(
@@ -84,7 +125,7 @@ class _Sign_upState extends State<Sign_up> {
                                           height: 20,
                                         ),
                                         TextFormField(
-                                          
+                                           controller: lastName,
                                            decoration: const InputDecoration(
                                               border: OutlineInputBorder(),
                                              focusedBorder: OutlineInputBorder(
@@ -116,7 +157,39 @@ class _Sign_upState extends State<Sign_up> {
                                           height: 20,
                                         ),
                                          TextFormField(
-                                          
+                                           controller: matricNo,
+                                           decoration: const InputDecoration(
+                                              border: OutlineInputBorder(),
+                                             focusedBorder: OutlineInputBorder(
+                                               borderSide: BorderSide(color: Colors.red, width: 3.0,),
+                                               borderRadius: BorderRadius.all(Radius.circular(0)),
+                                             ),
+                                             enabledBorder: OutlineInputBorder(
+                                               borderSide: BorderSide(color: Colors.black,  width: 1.0,),
+                                              //  borderRadius: BorderRadius.all(Radius.circular(50)),
+                                             ),
+                                            hoverColor: Colors.amber,
+                                            //  prefixIcon: const Icon(Icons.person),
+                                            hintText: 'Enter your Matric Number',
+                                            labelText: 'Matric Number',
+                                            labelStyle: TextStyle(
+                                              color: Colors.blue,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                          validator: (value){
+                                            if (value!.isEmpty){
+                                               return 'Please enter your Matric Number';
+                                            }
+                                            return null;
+      
+                                          },
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                         TextFormField(
+                                           controller: email,
                                            decoration: const InputDecoration(
                                               border: OutlineInputBorder(),
                                              focusedBorder: OutlineInputBorder(
@@ -151,6 +224,7 @@ class _Sign_upState extends State<Sign_up> {
                                           height: 20,
                                         ),
                                         TextFormField(
+                                          controller: password,
                                            obscureText: true,
                                           obscuringCharacter: ("*"),
                                            decoration: const InputDecoration(
@@ -199,6 +273,7 @@ class _Sign_upState extends State<Sign_up> {
                                             // ),
                                             onPressed: (){
                                              if (_formKey.currentState!.validate()) {
+                                                addUser();
                                               Navigator.pushNamed(context, '/login');
                                              }
                                             }, 

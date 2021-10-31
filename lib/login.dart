@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypt/crypt.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +18,14 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _matricNo = TextEditingController();
   TextEditingController _password = TextEditingController();
+  late bool _passwordVisible;
+  String error = '';
+  String error2 = '';
   @override
- 
+   void initState() {
+      _passwordVisible = true;
+  }
+
   Widget build(BuildContext context) {
 
 
@@ -48,7 +56,7 @@ class _LoginState extends State<Login> {
                 width: 400.0,
                 height: 500,
                 padding: EdgeInsets.fromLTRB(10, 2, 10, 5),
-                margin: EdgeInsets.fromLTRB(30, 100, 20, 30),
+                margin: EdgeInsets.fromLTRB(30, 130, 20, 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   // border: BoxBorder(2.0),
@@ -79,7 +87,8 @@ class _LoginState extends State<Login> {
                             children: [
                               TextFormField(
                                 controller: _matricNo,
-                                decoration: const InputDecoration(
+                                decoration:  InputDecoration(
+                                  errorText: error2,
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -92,7 +101,7 @@ class _LoginState extends State<Login> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.red,
-                                      width: 2.0,
+                                      width: 3.0,
                                     ),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(50)),
@@ -114,13 +123,30 @@ class _LoginState extends State<Login> {
                                 },
                               ),
                               SizedBox(
-                                height: 30,
+                                height: 20,
                               ),
                               TextFormField(
+                                keyboardType: TextInputType.text,
+                                //  controller: _userPasswordController,
+                                 obscureText: _passwordVisible,
                                 controller: _password,
-                                obscureText: true,
+                                // obscureText: true,
                                 obscuringCharacter: ("*"),
-                                decoration: const InputDecoration(
+                                decoration:  InputDecoration(
+                                  // helperText: error,
+                                  errorText: error,
+                                   suffixIcon: IconButton(
+                                         icon: Icon(
+              
+                                         _passwordVisible ? Icons.visibility_off: Icons.visibility,
+                                         //  color: Theme.of(context).primaryColorDark,
+                                           ),
+                                        onPressed: () {
+                                     setState(() {
+                                        _passwordVisible = !_passwordVisible;
+                                           });
+                                 },
+                               ),
                                   border: OutlineInputBorder(),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
@@ -133,7 +159,7 @@ class _LoginState extends State<Login> {
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
                                       color: Colors.red,
-                                      width: 2.0,
+                                      width: 3.0,
                                     ),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(50)),
@@ -157,7 +183,7 @@ class _LoginState extends State<Login> {
                               ),
                               SizedBox(
 
-                                height: 15,
+                                height: 10,
 
                                 // height: 10,
 
@@ -169,13 +195,13 @@ class _LoginState extends State<Login> {
 
 
                                       // Navigator.pushNamed(context, '/forget');
-                                      // final c1 = Crypt.sha256('amubieya');
+                                      // final c1 = Crypt.sha256('einstein');
                                       // print(c1);
 
-                                      Navigator.pushNamed(context, '/forget');
+                                      // Navigator.pushNamed(context, '/forget');
                                       // final c1 = Crypt.sha256('islamiat');
 
-                                      //Navigator.pushNamed(context, '/forget');
+                                      Navigator.pushNamed(context, '/forget');
                                       // final c1 = Crypt.sha256('einstein');
 
                                       // print(c1);
@@ -191,7 +217,7 @@ class _LoginState extends State<Login> {
                               ),
                               SizedBox(
 
-                                height: 20,
+                                height: 10,
                               ),
                              
                               Container(
@@ -201,6 +227,21 @@ class _LoginState extends State<Login> {
                                 child: TextButton(
                                     onPressed: () async {
                                        SharedPreferences prefs = await SharedPreferences.getInstance();
+                                        showDialog(context: context, builder: (context) => 
+                                             Dialog(
+                                                 child: Container(
+                                                     height: 80,
+                                                     width: MediaQuery.of(context).size.width,
+                                                   alignment: Alignment.center,
+                                                child: Column(
+                                                  children: [
+                                                       CircularProgressIndicator(),
+                                                      Text("Wait in a moment"),
+                                                      Text("Loading........")
+                                                 ],
+                                                ),
+                                            )
+                                            ));
                                       if (_formKey.currentState!.validate()) {
                                         final response = await users
                                             .doc(_matricNo.text
@@ -227,23 +268,49 @@ class _LoginState extends State<Login> {
                                            await prefs.setString("state_of_origin", response.get('state_of_origin'));
                                            await prefs.setString("gender", response.get('gender'));
                                            await prefs.setString("Admission", response.get('Admission'));
+                                            await prefs.setString("image", response.get('image'));
+                                            await prefs.setString("dob", response.get('dob'));
+                                            await prefs.setString("phone_num", response.get('phone_num'));
+                                            await prefs.setString("lga", response.get('lga'));
+                                            await prefs.setString("address", response.get('address'));
+                                            await prefs.setString("residence_state", response.get('residence_state'));
+                                            await prefs.setString("residence_city", response.get('residence_city'));
 
                                             Navigator.pushNamed(
                                                 context, '/dash');
+                                            // Navigator.pushReplacementNamed(context, '/dash');
                                           } else {
-                                            print("Wrong Password");
+                                            // print("Wrong Password");
+                                          //  error() {
+                                          //     return 'Wrong Password';
+                                          // }
+                                          setState(() {
+                                            error= 'Wrong Password';
+                                          });
+                                        Navigator.pop(context);
+                                    
                                           }
                                         } else {
-                                          print("Matric No not in db");
+                                          
+
+                                          setState(() {
+                                            error2= 'Wrong Matric Number';
+                                          });
+                                        Navigator.pop(context);
                                         }
                                         //Navigator.pushNamed(context, '/dash');
                                       }
 
                                       // Navigator.pushNamed(context, '/dash');
+                                      // Navigator.pop(context);
+                                      //      ScaffoldMessenger.of(context).showSnackBar(
+                                      //  SnackBar(
+                                      //     content: Text("Logged In!")
+                                      // ));
                                     },
 
                                     child: Text(
-                                      "Log In",
+                                      "Login",
                                       style: TextStyle(
                                           color: Colors.white, fontSize: 30),
                                     )),

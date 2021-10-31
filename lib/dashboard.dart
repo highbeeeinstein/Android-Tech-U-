@@ -418,6 +418,7 @@ class _myDrawerState extends State<myDrawer> {
   String level = "";
   String Programme = "";
   String mname = "";
+  String image = "";
   void initSharedPreference() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -428,6 +429,7 @@ class _myDrawerState extends State<myDrawer> {
        level = '${prefs.getString('level')}';
       Programme = '${prefs.getString('programme')}';
       mname = '${prefs.getString('mname')}';
+       image = '${prefs.getString('image')}';
     });
   }
 
@@ -449,7 +451,7 @@ class _myDrawerState extends State<myDrawer> {
           accountEmail: Text(email),
           currentAccountPicture: CircleAvatar(
             
-            backgroundImage: AssetImage('assets/img_avatar2.png'),
+            backgroundImage: NetworkImage(image),
             
           ),
         ),
@@ -641,7 +643,7 @@ class _myDrawerState extends State<myDrawer> {
           leading: Icon(FontAwesomeIcons.signOutAlt),
            hoverColor: Colors.red,
           onTap: () {
-            Navigator.pushNamed(context, '/login');
+             Navigator.pushReplacementNamed(context, '/login');
           },
         ),
       ],
@@ -896,7 +898,7 @@ class _AlayeState extends State<Alaye> {
           //   Navigator.pushNamed(context, '/dash');
           //   break;
           case "menu3":
-            Navigator.pushNamed(context, '/login');
+            Navigator.pushReplacementNamed(context, '/login');
             break;
           default:
         }
