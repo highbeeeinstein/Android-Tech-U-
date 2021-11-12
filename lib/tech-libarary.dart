@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dashboard.dart';
 class E_Libarary extends StatefulWidget {
@@ -259,8 +260,12 @@ class _E_LibararyState extends State<E_Libarary> {
                                  //  if (_formKey.currentState!.validate()) {
                                       //   Navigator.pushNamed(context, '/dash');
                                       //  }
-
-                           launch('https://ebookcentral.proquest.com/auth/lib/ftuing/login.action');
+                                 WebView(
+                                       javascriptMode: JavascriptMode.unrestricted,
+                                       initialUrl: 'https://ebookcentral.proquest.com/auth/lib/ftuing/login.action',
+         
+                                );
+                          //  launch('https://ebookcentral.proquest.com/auth/lib/ftuing/login.action');
                       
 
                               },

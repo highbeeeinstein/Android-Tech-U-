@@ -1,6 +1,9 @@
 // import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/webviews/tech-u-website.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 class Image_slider extends StatefulWidget {
   const Image_slider({ Key? key }) : super(key: key);
 
@@ -55,9 +58,18 @@ class _Image_sliderState extends State<Image_slider> {
               width: 100,
               child: TextButton(
             onPressed: (){
-                Navigator.pushNamed(context, '/signup');
+              launch("https://tech-u.edu.ng/");
+              // Tech_U_Website();
+                // Navigator.pushNamed(context, '/signup');
+    //             WebView(
+    //       javascriptMode: JavascriptMode.unrestricted,
+    //       initialUrl: 'https://tech-u.edu.ng/',
+    //       // onWebViewCreated: (controller){
+    //       //   this.controller = controller;
+    //       // },
+    // );
             },
-             child: Text("Sign Up",  
+             child: Text("GO TO OUR WEBSITE",  
              style: TextStyle(
                color: Colors.red, 
                

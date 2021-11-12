@@ -20,6 +20,7 @@ import 'package:flutter_application_1/tech-libarary.dart';
 import 'package:flutter_application_1/update.dart';
 import 'package:flutter_application_1/view_history.dart'; 
 import 'package:flutter_application_1/view_result.dart';
+import 'package:flutter_application_1/webview.dart';
 
 void main() {
    WidgetsFlutterBinding.ensureInitialized();
@@ -121,6 +122,8 @@ class MyApp extends StatelessWidget {
             '/view':(context) => View_result(),
              '/hist':(context) => View_history(),
              '/libarary':(context) => E_Libarary(),
+             '/webview':(context) => ForgotWebView(),
+
         },
       // theme: ThemeData(
       //   primarySwatch: Colors.red,

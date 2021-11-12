@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import 'dashboard.dart';
 class Student_mail extends StatefulWidget {
@@ -272,8 +273,13 @@ class _Student_mailState extends State<Student_mail> {
                                  //  if (_formKey.currentState!.validate()) {
                                       //   Navigator.pushNamed(context, '/dash');
                                       //  }
+                                 WebView(
+                                       javascriptMode: JavascriptMode.unrestricted,
+                                       initialUrl: 'https://mail.google.com/mail/u/0/#inbox',
+         
+                                );
 
-                           launch('https://mail.google.com/mail/u/0/#inbox');
+                          //  launch('https://mail.google.com/mail/u/0/#inbox');
                       
 
                               },

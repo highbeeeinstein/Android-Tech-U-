@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 class Dashboard extends StatefulWidget {
   const Dashboard({ Key? key }) : super(key: key);
 
@@ -558,7 +559,11 @@ class _myDrawerState extends State<myDrawer> {
                hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
-              launch("https://courseware.tech-u.edu.ng/");
+                WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://courseware.tech-u.edu.ng/',
+              );
+              // launch("https://courseware.tech-u.edu.ng/");
           },
             ),
             ListTile(
@@ -567,7 +572,11 @@ class _myDrawerState extends State<myDrawer> {
                hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
-              launch("https://tees.tech-u.edu.ng/#/auth/login");
+               WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://tees.tech-u.edu.ng/#/auth/login',
+              );
+              // launch("https://tees.tech-u.edu.ng/#/auth/login");
           },
             ),
             ListTile(
@@ -602,7 +611,11 @@ class _myDrawerState extends State<myDrawer> {
                hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
-              launch("https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf");
+               WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf',
+              );
+              // launch("https://www.tech-u.edu.ng/documents/2020-2021-SECOND-SEMESTER-LECTURE-TIME-TABLE.pdf");
           },
             ),
             ListTile(
@@ -611,7 +624,11 @@ class _myDrawerState extends State<myDrawer> {
                hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
-              launch("https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf");
+               WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf',
+              );
+              // launch("https://www.tech-u.edu.ng/documents/TECH-U-STUDENTS-GUIDELINES-FOR-E-EXAMINATION.pdf");
           },
             ),
             ListTile(
@@ -619,7 +636,11 @@ class _myDrawerState extends State<myDrawer> {
               leading: Icon(FontAwesomeIcons.table),
                hoverColor: Colors.red,
               onTap: () {
-                 launch("https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf");
+                 WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf',
+              );
+                //  launch("https://www.tech-u.edu.ng/documents/Academic-Calendar-2020-2021-Session.pdf");
               // Navigator.pushNamed(context, '/');
               
           },
@@ -630,7 +651,11 @@ class _myDrawerState extends State<myDrawer> {
                hoverColor: Colors.red,
               onTap: () {
               // Navigator.pushNamed(context, '/');
-              launch(" https://www.tech-u.edu.ng/documents/school-fees-structure.pdf");
+              WebView(
+                javascriptMode: JavascriptMode.unrestricted,
+                  initialUrl: 'https://www.tech-u.edu.ng/documents/school-fees-structure.pdf',
+              );
+              // launch(" https://www.tech-u.edu.ng/documents/school-fees-structure.pdf");
              
           },
             )

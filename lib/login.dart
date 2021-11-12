@@ -201,7 +201,8 @@ class _LoginState extends State<Login> {
                                       // Navigator.pushNamed(context, '/forget');
                                       // final c1 = Crypt.sha256('islamiat');
 
-                                      Navigator.pushNamed(context, '/forget');
+                                      // Navigator.pushNamed(context, '/forget');
+                                      Navigator.pushNamed(context, '/webview');
                                       // final c1 = Crypt.sha256('einstein');
 
                                       // print(c1);
